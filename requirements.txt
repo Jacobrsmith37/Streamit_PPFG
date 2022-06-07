@@ -1,2 +1,3 @@
-!pip install matplotlib
-!pip install plotly
+-m pip install --upgrade pip
+-m pip install matplotlib
+-m pip install plotly
