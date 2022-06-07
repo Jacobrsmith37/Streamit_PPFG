@@ -10,7 +10,7 @@ import lasio
 
 
 # read the las file and show the headers, or 'keys'
-las = lasio.read(r"C:\Users\jac84753\OneDrive\Documents\Jacob\HESS\Pore Pressure\OVBD_PSI.las")
+las = lasio.read("OVBD_PSI.las")
 # store the las file in df variable as a pandas dataframe
 df_ovbd = las.df()
 df_ovbd.isna().sum()
