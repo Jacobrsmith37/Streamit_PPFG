@@ -1,2 +1,5 @@
 matplotlib
 plotly
+pandas
+lasio
+streamlit
