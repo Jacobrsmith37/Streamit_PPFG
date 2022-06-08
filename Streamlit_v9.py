@@ -50,14 +50,6 @@ df_HS.rename(columns={'OVBD_PSI': 'HS_PSI'}, inplace=True)
 
 # END COPY KB SHIFTED OVBD LOG
 
-
-# # Bring in topset and remove last column
-# Topset1 = pd.read_csv('Topset1_Updated_PPFG.csv')#, sep = "\t")
-# Topset1.drop('GeosteeringDip', axis = 1, inplace = True)
-
-# Topset1['TopName'] = Topset1['TopName'].str.title()
-
-
         
 # initialize list of lists
 data = [
