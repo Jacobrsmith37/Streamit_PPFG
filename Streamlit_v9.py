@@ -7,9 +7,8 @@ import pandas as pd
 import lasio
 from PIL import Image
 
-image_logo = Image.open(r'C:\Users\jac84753\OneDrive\Documents\Jacob\HESS\Hess_Logo.png')
-image_ship = Image.open(r'C:\Users\jac84753\OneDrive\Documents\Jacob\HESS\Hess_Drill_Ship.jpg')
-image_bakken_rig = Image.open(r'C:\Users\jac84753\OneDrive\Documents\Jacob\HESS\Hess_Bakken_Rig.jpg')
+image_logo = Image.open('Hess_Logo.jpg')
+image_bakken_rig = Image.open('Hess_Bakken_Rig.jpg')
 
 # read the las file and show the headers, or 'keys'
 las = lasio.read("OVBD_PSI.las")
