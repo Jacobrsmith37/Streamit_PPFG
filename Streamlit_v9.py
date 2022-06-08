@@ -8,7 +8,7 @@ import lasio
 #import Pillow as PIL
 from PIL import Image
 
-image_logo = Image.open('Hess_Logo.jpg')
+image_logo = Image.open('Hess_Logo.png')
 image_bakken_rig = Image.open('Hess_Bakken_Rig.jpg')
 
 # read the las file and show the headers, or 'keys'
