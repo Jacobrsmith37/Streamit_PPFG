@@ -12,7 +12,7 @@ image_ship = Image.open(r'C:\Users\jac84753\OneDrive\Documents\Jacob\HESS\Hess_D
 image_bakken_rig = Image.open(r'C:\Users\jac84753\OneDrive\Documents\Jacob\HESS\Hess_Bakken_Rig.jpg')
 
 # read the las file and show the headers, or 'keys'
-las = lasio.read(r"C:\Users\jac84753\OneDrive\Documents\Jacob\HESS\Pore Pressure\OVBD_PSI.las")
+las = lasio.read("OVBD_PSI.las")
 # store the las file in df variable as a pandas dataframe
 df_ovbd = las.df()
 df_ovbd.isna().sum()
@@ -49,6 +49,13 @@ df_HS = df_ovbd.copy()
 df_HS.rename(columns={'OVBD_PSI': 'HS_PSI'}, inplace=True)
 
 # END COPY KB SHIFTED OVBD LOG
+
+
+# # Bring in topset and remove last column
+# Topset1 = pd.read_csv('Topset1_Updated_PPFG.csv')#, sep = "\t")
+# Topset1.drop('GeosteeringDip', axis = 1, inplace = True)
+
+# Topset1['TopName'] = Topset1['TopName'].str.title()
 
 
         
