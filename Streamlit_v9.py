@@ -5,7 +5,7 @@ import plotly.express as px
 import plotly.graph_objects as go
 import pandas as pd
 import lasio
-import Pillow as PIL
+#import Pillow as PIL
 from PIL import Image
 
 image_logo = Image.open('Hess_Logo.jpg')
