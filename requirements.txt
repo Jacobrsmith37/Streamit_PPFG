@@ -5,3 +5,4 @@ pandas == 1.4.2
 lasio
 streamlit
 Pillow
+streamlit-aggrid
