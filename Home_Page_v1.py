@@ -54,7 +54,7 @@ upload_topset = st.sidebar.file_uploader('Upload a csv file containing Topset da
 
 choice = st.sidebar.radio('Options',('Calculator'))
 if choice == 'Calculator':
-  Calculator
+  Calculator()
 
   
 
