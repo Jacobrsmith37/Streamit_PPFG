@@ -12,12 +12,11 @@ from PIL import Image
 from st_aggrid import AgGrid
 from st_aggrid import AgGrid, DataReturnMode, GridUpdateMode, GridOptionsBuilder, JsCode
 import time
+from multiapp import MultiApp
 from apps import Calculator
 
-# app = MultiApp()
-# app.add_app('Calculator', calc.app)
 
-Calculator()
+
 #Run the app locally
 #Streamlit run C:\Users\jac84753\OneDrive\Documents\Jacob\HESS\Python\my_app\One_Pager.py
 
