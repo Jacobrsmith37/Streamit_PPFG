@@ -12,7 +12,6 @@ from PIL import Image
 from st_aggrid import AgGrid
 from st_aggrid import AgGrid, DataReturnMode, GridUpdateMode, GridOptionsBuilder, JsCode
 import time
-from multiapp import MultiApp
 from apps import Calculator
 
 
