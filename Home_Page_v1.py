@@ -12,7 +12,7 @@ from PIL import Image
 from st_aggrid import AgGrid
 from st_aggrid import AgGrid, DataReturnMode, GridUpdateMode, GridOptionsBuilder, JsCode
 import time
-from apps import apps
+from apps import Calculator
 
 app = MultiApp()
 app.add_app('Calculator', calc.app)
