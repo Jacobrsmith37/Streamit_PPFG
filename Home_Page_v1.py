@@ -14,8 +14,8 @@ from st_aggrid import AgGrid, DataReturnMode, GridUpdateMode, GridOptionsBuilder
 import time
 from apps import Calculator
 
-app = MultiApp()
-app.add_app('Calculator', calc.app)
+# app = MultiApp()
+# app.add_app('Calculator', calc.app)
 
 
 #Run the app locally
