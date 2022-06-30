@@ -12,7 +12,7 @@ from PIL import Image
 from st_aggrid import AgGrid
 from st_aggrid import AgGrid, DataReturnMode, GridUpdateMode, GridOptionsBuilder, JsCode
 import time
-from Streamlit_PPFG import Calculator
+from apps import apps
 
 
 
