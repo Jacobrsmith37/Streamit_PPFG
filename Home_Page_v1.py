@@ -14,10 +14,10 @@ from st_aggrid import AgGrid, DataReturnMode, GridUpdateMode, GridOptionsBuilder
 import time
 from apps import Calculator
 
-app = MultiApp()
-app.add_app('Calculator', calc.app)
+# app = MultiApp()
+# app.add_app('Calculator', calc.app)
 
-
+Calculator()
 #Run the app locally
 #Streamlit run C:\Users\jac84753\OneDrive\Documents\Jacob\HESS\Python\my_app\One_Pager.py
 
