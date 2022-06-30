@@ -52,6 +52,9 @@ st.sidebar.image(image_logo)
 
 upload_topset = st.sidebar.file_uploader('Upload a csv file containing Topset data')
 
+choice = st.sidebar.radio('','Calculator')
+if choice == 'Calculator':
+  Calculator
 
   
 
