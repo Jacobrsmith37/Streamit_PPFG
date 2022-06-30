@@ -12,7 +12,7 @@ from PIL import Image
 from st_aggrid import AgGrid
 from st_aggrid import AgGrid, DataReturnMode, GridUpdateMode, GridOptionsBuilder, JsCode
 import time
-from apps import Calculator
+
 
 
 
@@ -52,9 +52,7 @@ st.sidebar.image(image_logo)
 
 upload_topset = st.sidebar.file_uploader('Upload a csv file containing Topset data')
 
-choice = st.sidebar.radio('Options',('Calculator'))
-if choice == 'Calculator':
-  Calculator()
+
 
   
 
