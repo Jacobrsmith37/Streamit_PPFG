@@ -22,11 +22,11 @@ import time
 
 # #    Turn to code for Web Service  
 # ######################################
-# image_logo = Image.open('Hess_Logo.png')
-# image_bakken_rig = Image.open('Hess_Bakken_Rig.jpg')
+image_logo = Image.open('Hess_Logo.png')
+image_bakken_rig = Image.open('Hess_Bakken_Rig.jpg')
 
-# # read the las file and show the headers, or 'keys'
-# las = lasio.read("OVBD_PSI.las")
+# read the las file and show the headers, or 'keys'
+las = lasio.read("OVBD_PSI.las")
 # #######################################
 
 
@@ -34,12 +34,12 @@ import time
 
 #    Turn to code for Local Host  
 #######################################
-image_logo = Image.open(r'C:\Users\jac84753\OneDrive\Documents\Jacob\HESS\Hess_Logo.png')
-image_ship = Image.open(r'C:\Users\jac84753\OneDrive\Documents\Jacob\HESS\Hess_Drill_Ship.jpg')
-image_bakken_rig = Image.open(r'C:\Users\jac84753\OneDrive\Documents\Jacob\HESS\Hess_Bakken_Rig.jpg')
+# image_logo = Image.open(r'C:\Users\jac84753\OneDrive\Documents\Jacob\HESS\Hess_Logo.png')
+# image_ship = Image.open(r'C:\Users\jac84753\OneDrive\Documents\Jacob\HESS\Hess_Drill_Ship.jpg')
+# image_bakken_rig = Image.open(r'C:\Users\jac84753\OneDrive\Documents\Jacob\HESS\Hess_Bakken_Rig.jpg')
 
-# read the las file and show the headers, or 'keys'
-las = lasio.read(r"C:\Users\jac84753\OneDrive\Documents\Jacob\HESS\Pore Pressure\OVBD_PSI.las")
+# # read the las file and show the headers, or 'keys'
+# las = lasio.read(r"C:\Users\jac84753\OneDrive\Documents\Jacob\HESS\Pore Pressure\OVBD_PSI.las")
 #######################################
 
 # Add a title and intro text
