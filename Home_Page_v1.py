@@ -115,7 +115,7 @@ def home():
     st.image(image_bakken_rig)
     st.subheader('To begin, upload a Topset csv file on the Sidebar')
 
-options = st.sidebar.radio('View Calulator', ['Yes', 'No'])
+options = st.sidebar.radio('View Mud Weight to PSI Calulator', ['Yes', 'No'])
 def calc():
 
     st.write('Mud Weight to PSI Calculator')
