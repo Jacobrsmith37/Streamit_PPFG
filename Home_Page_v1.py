@@ -202,13 +202,32 @@ def interactive_plot():
     ]
     # Create the pandas DataFrame
     df_lith = pd.DataFrame(data, columns = ['Lith', 'Kf', 'Ts'])
-
+    
     st.header('Lithology-Based Geomechanical Properties')
-    col1, col2 = st.columns(2)
-    with col1:
-        df_lith = AgGrid(df_lith, editable = True, fit_columns_on_grid_load=True)
 
-        df_lith = df_lith['data'] 
+
+    options = GridOptionsBuilder.from_dataframe(
+    df_lith, 
+    editable = True,
+    enableRowGroup = True, 
+    enableValue = True, 
+    enablePivot = True
+    )
+
+    options.configure_side_bar()
+    options.configure_selection("single")
+
+    df_lith = AgGrid(df_lith,
+                     editable = True,
+                     enable_enterprise_modules = True,
+                     gridOptions = options.build(), 
+                     update_mode = GridUpdateMode.MODEL_CHANGED,
+                     fit_columns_on_grid_load = True,
+                     allow_unsafe_jscode = True)
+    df_lith = df_lith['data'] 
+
+    
+    
     
     
     df_ovbd['OVBD_PPG'] = df_ovbd['OVBD_PSI'] / df_ovbd['DEPTH'] / 0.052
