@@ -164,9 +164,30 @@ def interactive_plot():
     global df_topset
     global df_ovbd
     st.write('Here is your uploaded and editable Topset:')
-    df_topset = AgGrid(df_topset, editable = True)
+    options = GridOptionsBuilder.from_dataframe(
+    df_topset, 
+    editable = True,
+    enableRowGroup = True, 
+    enableValue = True, 
+    enablePivot = True
+    )
+
+    options.configure_side_bar()
+    options.configure_selection("single")
+
+    df_topset = AgGrid(df_topset,
+                     editable = True,
+                     enable_enterprise_modules = True,
+                     gridOptions = options.build(), 
+                     update_mode = GridUpdateMode.MODEL_CHANGED,
+                     fit_columns_on_grid_load = False,
+                     allow_unsafe_jscode = True)
+    
     new_df = df_topset['data']   
-    new_df['Lithology'] = 'shaley'
+ 
+#     df_topset = AgGrid(df_topset, editable = True)
+#     new_df = df_topset['data']   
+#     new_df['Lithology'] = 'shaley'
     
         # initialize list of lists
     data = [
