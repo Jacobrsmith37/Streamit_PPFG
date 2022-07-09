@@ -572,8 +572,8 @@ def interactive_plot():
             if HS_300_low_rival == 0:
                 continue
             if df_HS['DEPTH'][i] in range(
-                 (int(frobisher_alida_upload.TVD)),
-                 (int(frobisher_alida_upload.TVD + 20))):
+                 (int(frobisher_alida_upload.TVD) -10),
+                 (int(frobisher_alida_upload.TVD + 10))):
                     df_HS['HS_PSI'][i] = HS_300_low_rival
 
 
