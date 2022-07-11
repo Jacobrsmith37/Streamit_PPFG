@@ -516,7 +516,7 @@ def interactive_plot():
 
         
 ################ HIGH SIDE #######################    
-    @st.cache
+
     def HS_calcs():
         for i in range(len(df_HS)):
             if df_HS['DEPTH'][i] <= Water_Table_Elev + shift:
@@ -595,6 +595,7 @@ def interactive_plot():
                 
                 
 # Create a function to iterate a loop to add Lithology, Ts, and Ko to the OVBD log
+    @st.cache
     def FG_calcs():
         for i in range(len(df_ovbd)):
             if df_ovbd['DEPTH'][i] in range(
