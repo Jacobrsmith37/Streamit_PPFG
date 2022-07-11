@@ -113,7 +113,7 @@ def home():
     st.image(image_bakken_rig)
     st.subheader('To begin, upload a Topset csv file on the Sidebar')
 
-options = st.sidebar.radio('View Mud Weight to PSI Calulator', ['Yes', 'No'])
+options = st.sidebar.radio('View Mud Weight to PSI Calulator', ['No', 'Yes'])
 
 #@st.cache(allow_output_mutation=True)
 def calc():
@@ -516,7 +516,7 @@ def interactive_plot():
 
         
 ################ HIGH SIDE #######################    
-
+    @st.cache
     def HS_calcs():
         for i in range(len(df_HS)):
             if df_HS['DEPTH'][i] <= Water_Table_Elev + shift:
