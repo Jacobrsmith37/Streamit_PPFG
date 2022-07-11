@@ -595,7 +595,7 @@ def interactive_plot():
                 
                 
 # Create a function to iterate a loop to add Lithology, Ts, and Ko to the OVBD log
-    @st.cache(allow_output_mutation = True)
+
     def FG_calcs():
         for i in range(len(df_ovbd)):
             if df_ovbd['DEPTH'][i] in range(
