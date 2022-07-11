@@ -118,25 +118,25 @@ def home():
 
 options = st.sidebar.radio('View Mud Weight to PSI Calulator', ['Yes', 'No'])
 
-@st.cache(suppress_st_warning=True)
+@st.cache(allow_output_mutation=True)
 def calc():
 
     st.write('Mud Weight to PSI Calculator')
 
-    @st.cache(suppress_st_warning=True)
+    @st.cache(allow_output_mutation=True)
     def ppg_to_psi():
         st.session_state.psi = st.session_state.ppg * st.session_state.depth * .052
 
 
-    @st.cache(suppress_st_warning=True)
+    @st.cache(allow_output_mutation=True)
     def psi_to_ppg():
         st.session_state.ppg = st.session_state.psi / st.session_state.depth / .052
 
-    @st.cache(suppress_st_warning=True)
+    @st.cache(allow_output_mutation=True)
     def depth():
         st.session_state.depth 
 
-    @st.cache(suppress_st_warning=True)
+    @st.cache(allow_output_mutation=True)
     def clear():
         st.session_state.depth, st.session_state.psi, st.session_state.ppg = 0,0,0
 
@@ -162,7 +162,7 @@ def calc():
 
 
     
-st.cache(suppress_st_warning=True)    
+st.cache(allow_output_mutation=True)   
 def interactive_plot():
     global df_topset
     global df_ovbd
