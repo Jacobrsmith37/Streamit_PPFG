@@ -110,12 +110,14 @@ df_HS.rename(columns={'OVBD_PSI': 'HS_PSI'}, inplace=True)
 
 
 # Functions
+@st.cache 
 def home():
     st.header('Begin exploring the data below')
     st.image(image_bakken_rig)
     st.subheader('To begin, upload a Topset csv file on the Sidebar')
 
 options = st.sidebar.radio('View Mud Weight to PSI Calulator', ['Yes', 'No'])
+@st.cache
 def calc():
 
     st.write('Mud Weight to PSI Calculator')
@@ -159,7 +161,7 @@ def calc():
 
 
     
-st.cache()    
+st.cache    
 def interactive_plot():
     global df_topset
     global df_ovbd
