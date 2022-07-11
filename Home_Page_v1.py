@@ -110,7 +110,7 @@ df_HS.rename(columns={'OVBD_PSI': 'HS_PSI'}, inplace=True)
 
 
 # Functions
-#@st.cache(suppress_st_warning=True) 
+@st.cache
 def home():
     st.header('Begin exploring the data below')
     st.image(image_bakken_rig)
