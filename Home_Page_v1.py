@@ -110,7 +110,7 @@ df_HS.rename(columns={'OVBD_PSI': 'HS_PSI'}, inplace=True)
 
 
 # Functions
-@st.cache(suppress_st_warning=True) 
+#@st.cache(suppress_st_warning=True) 
 def home():
     st.header('Begin exploring the data below')
     st.image(image_bakken_rig)
@@ -118,7 +118,7 @@ def home():
 
 options = st.sidebar.radio('View Mud Weight to PSI Calulator', ['Yes', 'No'])
 
-@st.cache(allow_output_mutation=True)
+#@st.cache(allow_output_mutation=True)
 def calc():
 
     st.write('Mud Weight to PSI Calculator')
