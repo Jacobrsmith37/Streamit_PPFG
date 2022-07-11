@@ -158,7 +158,7 @@ def calc():
 
 
     
-st.cache(persist = True)  
+@st.cache 
 def interactive_plot():
     global df_topset
     global df_ovbd
@@ -249,7 +249,7 @@ def interactive_plot():
     
     
     with st.spinner(text='Calculating Log Curves...'):
-        time.sleep(2)
+        time.sleep(1)
         st.success('Done Calculating... Rendering Interactive Plot')
    
     st.subheader('Input Known Depth and Pressure Variables Below')
