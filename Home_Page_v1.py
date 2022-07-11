@@ -123,20 +123,19 @@ def calc():
 
     st.write('Mud Weight to PSI Calculator')
 
-    @st.cache(allow_output_mutation=True)
     def ppg_to_psi():
         st.session_state.psi = st.session_state.ppg * st.session_state.depth * .052
 
 
-    @st.cache(allow_output_mutation=True)
+
     def psi_to_ppg():
         st.session_state.ppg = st.session_state.psi / st.session_state.depth / .052
 
-    @st.cache(allow_output_mutation=True)
+
     def depth():
         st.session_state.depth 
 
-    @st.cache(allow_output_mutation=True)
+  
     def clear():
         st.session_state.depth, st.session_state.psi, st.session_state.ppg = 0,0,0
 
