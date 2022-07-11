@@ -14,8 +14,6 @@ from st_aggrid import AgGrid, DataReturnMode, GridUpdateMode, GridOptionsBuilder
 import time
 
 
-
-
 #Run the app locally
 #Streamlit run C:\Users\jac84753\OneDrive\Documents\Jacob\HESS\Python\my_app\One_Pager.py
 
@@ -110,7 +108,6 @@ df_HS.rename(columns={'OVBD_PSI': 'HS_PSI'}, inplace=True)
 
 
 # Functions
-@st.cache
 def home():
     st.header('Begin exploring the data below')
     st.image(image_bakken_rig)
