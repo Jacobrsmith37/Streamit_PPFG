@@ -158,7 +158,7 @@ def calc():
 
 
     
-st.cache  
+st.cache(persist = True)  
 def interactive_plot():
     global df_topset
     global df_ovbd
