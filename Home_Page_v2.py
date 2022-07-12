@@ -330,7 +330,7 @@ def interactive_plot():
         allow_unsafe_jscode = True)
 
     merge_df = merge_df['data'] 
-
+    return(merge_df)
     
     
     
