@@ -705,6 +705,7 @@ def interactive_plot():
     
     
     def FG_calcs():
+        global merge_df
         for i in range(len(df_ovbd)):
             depth_value = df_ovbd['DEPTH'][i]
 
