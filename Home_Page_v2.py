@@ -345,7 +345,7 @@ def interactive_plot():
     
     
     with st.spinner(text='Calculating Log Curves...'):
-        time.sleep(2)
+        time.sleep(1)
         st.success('Done Calculating... Rendering Interactive Plot')
    
     st.subheader('Input Known Depth and Pressure Variables Below')
@@ -1282,5 +1282,6 @@ if options == 'Yes':
     calc()
 else:
     ''
-interactive_plot()
 data_summary()
+interactive_plot()
+
