@@ -165,7 +165,7 @@ def interactive_plot():
     else: st.warning('Upload your Topset (must include TVD values)')    
     
     
-    global df_topset
+    #global df_topset
     global df_ovbd
     global df_lith
     st.write('Here is your uploaded and editable Topset:')
