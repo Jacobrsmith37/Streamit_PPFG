@@ -158,7 +158,7 @@ def calc():
     
 st.cache()    
 def interactive_plot():
-    global df_topset
+    #global df_topset
     global df_ovbd
     global df_lith
     st.write('Here is your uploaded and editable Topset:')
