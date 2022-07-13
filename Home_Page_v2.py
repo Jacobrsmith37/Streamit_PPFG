@@ -1231,7 +1231,7 @@ def interactive_plot():
     df_HS['HS_PPG'] = df_HS['HS_PSI'] / df_HS['DEPTH'] / .052
     
 # Create a column for Frac Gradient PSI and then create a column for Frac Gradient PPG with simple conversion
-    df_ovbd['LS_FG_PSI'] = float(df_ovbd['Ko']) * (df_ovbd['OVBD_PSI'] - df_LS['LS_PSI']) + df_LS['LS_PSI'] + float(df_ovbd['Ts'])
+    df_ovbd['LS_FG_PSI'] = float(df_ovbd['Ko']) * (df_ovbd['OVBD_PSI'] - df_LS['LS_PSI']) + df_LS['LS_PSI'] + (df_ovbd['Ts'])
     df_ovbd['LS_FG_PPG'] = df_ovbd['LS_FG_PSI'] / df_ovbd['DEPTH'] / 0.052
     df_ovbd['ML_FG_PSI'] = (df_ovbd['Ko']) * (df_ovbd['OVBD_PSI'] - df_ML['ML_PSI']) + df_ML['ML_PSI'] + df_ovbd['Ts']
     df_ovbd['ML_FG_PPG'] = df_ovbd['ML_FG_PSI'] / df_ovbd['DEPTH'] / 0.052 
