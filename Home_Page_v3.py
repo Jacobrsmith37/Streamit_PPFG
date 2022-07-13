@@ -167,7 +167,9 @@ def interactive_plot():
     
     if 'Lithology' not in df_topset:
         df_topset.insert(3, 'Lithology', '')
-        
+    if 'Plot?' not in df_topset:
+        df_topset.insert(4, 'Plot?', '')
+          
 
     options = GridOptionsBuilder.from_dataframe(
         
@@ -280,7 +282,7 @@ def interactive_plot():
 
     
     merge_df = pd.merge(new_df, df_lith, on = ['Lithology'], how = 'inner')
-    merge_df = merge_df[['TopName', 'TVD', 'Lithology', 'Kf', 'Ts']].sort_values(by = ['TVD'], ascending = True)
+    merge_df = merge_df[['TopName', 'TVD', 'Lithology', 'Kf', 'Ts', 'Plot?']].sort_values(by = ['TVD'], ascending = True)
 #     merge_df = merge_df.astype(str)
  
     
@@ -771,24 +773,36 @@ def interactive_plot():
                        title_x = .5,  
                        height = 1200,
                        template='plotly')
+    def Topnames():
+            for row in merge_df.iterrows():
+                if row[1]['Plot?'] is not '':
+            
+
+                    plot.add_hline(y = row[1]['TVD'],
+                                   line_dash = 'dot',
+                                   annotation_text = row[1]['TopName'],
+                                  annotation_position = 'top left') 
+    Topnames()
     
-    plot.add_hline(y = int(pierre_upload['TVD']), line_dash="dot", row=1, col="all", annotation_text = 'Pierre', annotation_position = 'top left')
-    plot.add_hline(y = int(greenhorn_upload['TVD']), line_dash="dot", row=1, col="all", annotation_text = 'Greenhorn', annotation_position = 'top left')
-    plot.add_hline(y = int(greenhorn_upload['TVD']) + 200, line_dash="dot", row=1, col="all", annotation_text = 'Greenhorn Silt', annotation_position = 'top left')
-    plot.add_hline(y = int(mowry_upload['TVD']), line_dash="dot", row=1, col="all", annotation_text = 'Mowry', annotation_position = 'top left')
-    plot.add_hline(y = int(inyan_kara_upload['TVD']), line_dash="dot", row=1, col="all", annotation_text = 'Inyan Kara', annotation_position = 'top left')
-    plot.add_hline(y = int(swift_upload['TVD']), line_dash="dot", row=1, col="all", annotation_text = 'Swift', annotation_position = 'top left')
-    plot.add_hline(y = int(rierdon_upload['TVD']), line_dash="dot", row=1, col="all", annotation_text = 'Rierdon', annotation_position = 'top left')
-    plot.add_hline(y = int(amsden_upload['TVD']), line_dash="dot", row=1, col="all", annotation_text = 'Amsden', annotation_position = 'top left')
-    plot.add_hline(y = int(tyler_upload['TVD']), line_dash="dot", row=1, col="all", annotation_text = 'Tyler', annotation_position = 'top left')
-    plot.add_hline(y = int(kibbey_lime_upload['TVD']), line_dash="dot", row=1, col="all", annotation_text = 'Kibbey Lime', annotation_position = 'top left')
-    plot.add_hline(y = int(charles_upload['TVD']), line_dash="dot", row=1, col="all", annotation_text = 'Charles', annotation_position = 'top left')
- #   plot.add_hline(y = int(top_last_salt_upload['TVD']), line_dash="dot", row=1, col="all", annotation_text = 'Top Last Salt', annotation_position = 'top left')
- #   plot.add_hline(y = int(base_last_salt_upload['TVD']), line_dash="dot", row=1, col="all", annotation_text = 'Base Last Salt', annotation_position = 'top left')
-    plot.add_hline(y = int(frobisher_alida_upload['TVD']), line_dash="dot", row=1, col="all", annotation_text = 'Frobisher Alida', annotation_position = 'top left')
-    plot.add_hline(y = int(upper_bakken_upload['TVD']), line_dash="dot", row=1, col="all", annotation_text = 'Upper Bakken Shale', annotation_position = 'top left')
- #   plot.add_hline(y = int(lower_bakken_upload['TVD']), line_dash="dot", row=1, col="all", annotation_text = 'Lower Bakken Shale', annotation_position = 'top left')
-    plot.add_hline(y = int(birdbear_upload['TVD']), line_dash="dot", row=1, col="all", annotation_text = 'Birdbear', annotation_position = 'top left')
+    
+    
+#     plot.add_hline(y = int(pierre_upload['TVD']), line_dash="dot", row=1, col="all", annotation_text = 'Pierre', annotation_position = 'top left')
+#     plot.add_hline(y = int(greenhorn_upload['TVD']), line_dash="dot", row=1, col="all", annotation_text = 'Greenhorn', annotation_position = 'top left')
+#     plot.add_hline(y = int(greenhorn_upload['TVD']) + 200, line_dash="dot", row=1, col="all", annotation_text = 'Greenhorn Silt', annotation_position = 'top left')
+#     plot.add_hline(y = int(mowry_upload['TVD']), line_dash="dot", row=1, col="all", annotation_text = 'Mowry', annotation_position = 'top left')
+#     plot.add_hline(y = int(inyan_kara_upload['TVD']), line_dash="dot", row=1, col="all", annotation_text = 'Inyan Kara', annotation_position = 'top left')
+#     plot.add_hline(y = int(swift_upload['TVD']), line_dash="dot", row=1, col="all", annotation_text = 'Swift', annotation_position = 'top left')
+#     plot.add_hline(y = int(rierdon_upload['TVD']), line_dash="dot", row=1, col="all", annotation_text = 'Rierdon', annotation_position = 'top left')
+#     plot.add_hline(y = int(amsden_upload['TVD']), line_dash="dot", row=1, col="all", annotation_text = 'Amsden', annotation_position = 'top left')
+#     plot.add_hline(y = int(tyler_upload['TVD']), line_dash="dot", row=1, col="all", annotation_text = 'Tyler', annotation_position = 'top left')
+#     plot.add_hline(y = int(kibbey_lime_upload['TVD']), line_dash="dot", row=1, col="all", annotation_text = 'Kibbey Lime', annotation_position = 'top left')
+#     plot.add_hline(y = int(charles_upload['TVD']), line_dash="dot", row=1, col="all", annotation_text = 'Charles', annotation_position = 'top left')
+#  #   plot.add_hline(y = int(top_last_salt_upload['TVD']), line_dash="dot", row=1, col="all", annotation_text = 'Top Last Salt', annotation_position = 'top left')
+#  #   plot.add_hline(y = int(base_last_salt_upload['TVD']), line_dash="dot", row=1, col="all", annotation_text = 'Base Last Salt', annotation_position = 'top left')
+#     plot.add_hline(y = int(frobisher_alida_upload['TVD']), line_dash="dot", row=1, col="all", annotation_text = 'Frobisher Alida', annotation_position = 'top left')
+#     plot.add_hline(y = int(upper_bakken_upload['TVD']), line_dash="dot", row=1, col="all", annotation_text = 'Upper Bakken Shale', annotation_position = 'top left')
+#  #   plot.add_hline(y = int(lower_bakken_upload['TVD']), line_dash="dot", row=1, col="all", annotation_text = 'Lower Bakken Shale', annotation_position = 'top left')
+#     plot.add_hline(y = int(birdbear_upload['TVD']), line_dash="dot", row=1, col="all", annotation_text = 'Birdbear', annotation_position = 'top left')
 
     st.plotly_chart(plot, use_container_width=True)
 
