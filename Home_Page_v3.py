@@ -157,7 +157,7 @@ def interactive_plot():
     
 
     df_topset.fillna(0, inplace=True)
-    df_topset = df_topset.astype({"TVD":"int","MD":"int"})
+    df_topset = df_topset.astype({"TVD":"int")
     df_append = pd.DataFrame([[0] * len(df_topset.columns)], columns = df_topset.columns)
     df_append.loc[0:1,'TopName'] = 'GROUND LEVEL'
     df_append.loc[0:1,'TVD'] = 32
