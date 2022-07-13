@@ -2,7 +2,7 @@
 #pip install streamlit-aggrid
 #pip install --upgrade streamlit
 #Import the required Libraries
-#!pip install --upgrade pandas
+#pip install --upgrade pandas
 import streamlit as st
 import plotly.express as px
 import plotly.graph_objects as go
