@@ -30,7 +30,6 @@ las = lasio.read("OVBD_PSI.las")
 
 
 
-
 #    Turn to code for Local Host  
 #######################################
 # image_logo = Image.open(r'C:\Users\jac84753\OneDrive\Documents\Jacob\HESS\Hess_Logo.png')
