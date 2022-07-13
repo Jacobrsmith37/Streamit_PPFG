@@ -716,8 +716,8 @@ def interactive_plot():
 
             for index, row in enumerate(merge_df.values):
                 try:
-                    Kf = merge_df.iloc[index, 3]
-                    Ts = merge_df.iloc[index, 4]
+                    Kf = merge_df.iloc[index, 3].copy()
+                    Ts = merge_df.iloc[index, 4].copy()
                     
                     if (depth_value >= merge_df.iloc[index, 1]) & (depth_value <= merge_df.iloc[index + 1, 1]):
    
