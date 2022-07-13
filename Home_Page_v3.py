@@ -20,11 +20,11 @@ import time
 
 # #    Turn to code for Web Service  
 # ######################################
-# image_logo = Image.open('Hess_Logo.png')
-# image_bakken_rig = Image.open('Hess_Bakken_Rig.jpg')
+image_logo = Image.open('Hess_Logo.png')
+image_bakken_rig = Image.open('Hess_Bakken_Rig.jpg')
 
-# # read the las file and show the headers, or 'keys'
-# las = lasio.read("OVBD_PSI.las")
+# read the las file and show the headers, or 'keys'
+las = lasio.read("OVBD_PSI.las")
 # #######################################
 
 
@@ -32,12 +32,12 @@ import time
 
 #    Turn to code for Local Host  
 #######################################
-image_logo = Image.open(r'C:\Users\jac84753\OneDrive\Documents\Jacob\HESS\Hess_Logo.png')
-image_ship = Image.open(r'C:\Users\jac84753\OneDrive\Documents\Jacob\HESS\Hess_Drill_Ship.jpg')
-image_bakken_rig = Image.open(r'C:\Users\jac84753\OneDrive\Documents\Jacob\HESS\Hess_Bakken_Rig.jpg')
+# image_logo = Image.open(r'C:\Users\jac84753\OneDrive\Documents\Jacob\HESS\Hess_Logo.png')
+# image_ship = Image.open(r'C:\Users\jac84753\OneDrive\Documents\Jacob\HESS\Hess_Drill_Ship.jpg')
+# image_bakken_rig = Image.open(r'C:\Users\jac84753\OneDrive\Documents\Jacob\HESS\Hess_Bakken_Rig.jpg')
 
-# read the las file and show the headers, or 'keys'
-las = lasio.read(r"C:\Users\jac84753\OneDrive\Documents\Jacob\HESS\Pore Pressure\OVBD_PSI.las")
+# # read the las file and show the headers, or 'keys'
+# las = lasio.read(r"C:\Users\jac84753\OneDrive\Documents\Jacob\HESS\Pore Pressure\OVBD_PSI.las")
 #######################################
 
 
@@ -278,10 +278,6 @@ def interactive_plot():
     df_lith = df_lith['data'] 
     
 
-        
- 
-    
-    
     
     merge_df = pd.merge(new_df, df_lith, on = ['Lithology'], how = 'inner')
     merge_df = merge_df[['TopName', 'TVD', 'Lithology', 'Kf', 'Ts']].sort_values(by = ['TVD'], ascending = True)
@@ -680,9 +676,7 @@ def interactive_plot():
                 
                 
 # Create a function to iterate a loop to add Lithology, Ts, and Ko to the OVBD log
-   
-    
-    
+
     
     def FG_calcs():
         
@@ -728,29 +722,6 @@ def interactive_plot():
     three_forks_upload = new_df[new_df['TopName'] == 'THREE_FORKS']
     birdbear_upload = new_df[new_df['TopName'] == 'BIRDBEAR']  
     
-    # Add formation tops and labels for an uploaded Topset
-#     for i in range(len(new_df)):
-        
-#         top_1 = new_df['TopName'][i]
-#         top_2 = new_df['TopName'][i+1]
-#         top_3 = new_df[new_df['TopName'] == 'BELLE_FOURCHE']
-#         top_4 = new_df[new_df['TopName'] == 'MOWRY']
-#         top_5 = new_df[new_df['TopName'] == 'INYAN_KARA']
-#         top_6 = new_df[new_df['TopName'] == 'SWIFT']
-#         top_7 = new_df[new_df['TopName'] == 'RIERDON']
-#         top_8 = new_df[new_df['TopName'] == 'AMSDEN']
-#         top_9 = new_df[new_df['TopName'] == 'TYLER']
-#         top_10 = new_df[new_df['TopName'] == 'KIBBEY_LIME']
-#         top_11= new_df[new_df['TopName'] == 'CHARLES']
-#         top_12 = new_df[new_df['TopName'] == 'TOP_LAST_SALT']
-#         top_13 = new_df[new_df['TopName'] == 'BASE_LAST_SALT']
-#         top_14 = new_df[new_df['TopName'] == 'FROBISHER-ALIDA_INTERVAL']
-#         top_15 = new_df[new_df['TopName'] == 'LODGEPOLE']
-#         top_16 = new_df[new_df['TopName'] == 'UPPER_BAKKEN_SHALE']
-#         top_17 = new_df[new_df['TopName'] == 'MIDDLE_BAKKEN']
-#         top_18 = new_df[new_df['TopName'] == 'LOWER_BAKKEN_SHALE']
-#         top_19 = new_df[new_df['TopName'] == 'THREE_FORKS']
-#         top_20 = new_df[new_df['TopName'] == 'BIRDBEAR']  
 
 # Execute the functions defined earlier for Low Side, Most Likely, and High Side    
     LS_calcs()
