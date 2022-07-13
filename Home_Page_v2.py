@@ -725,7 +725,7 @@ def interactive_plot():
                             df_ovbd['Ts'][i] = Ts
 
                 except:
-                    if depth_value > merge_df['TVD'][index-1]:
+                    if depth_value > merge_df['TVD'].iloc[index - 1]:
                         df_ovbd['Ko'][i] = merge_df.iloc[index, 3]
                         df_ovbd['Ts'][i] = merge_df.iloc[index, 4]
                         
