@@ -55,8 +55,7 @@ upload_topset = st.sidebar.file_uploader('Upload a csv file containing Topset da
 if upload_topset is not None:
   
         df_topset = pd.read_csv(upload_topset)
-
-    else: 
+else: 
         st.warning('Upload your Topset (must include TVD values)')    
   
   
