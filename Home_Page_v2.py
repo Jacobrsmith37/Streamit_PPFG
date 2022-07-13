@@ -713,8 +713,8 @@ def interactive_plot():
         
         for i in range(len(df_ovbd)):
             depth_value = df_ovbd['DEPTH'][i]
-             Kf = merge_df.iloc[index, 3]
-             Ts = merge_df.iloc[index, 4]
+            Kf = merge_df.iloc[index, 3]
+            Ts = merge_df.iloc[index, 4]
             for index, row in enumerate(merge_df.values):
                 try:
                     if (depth_value >= merge_df.iloc[index, 1]) & (depth_value <= merge_df.iloc[index + 1, 1]):
