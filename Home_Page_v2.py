@@ -178,7 +178,7 @@ def interactive_plot():
 #     df_topset = df_topset.sort_index().reset_index(drop=True)
 
     
-    df_topset[['TVD','MD']] =  df_topset[['TVD','MD']].apply(pd.to_numeric, errors='coerce')
+    df_topset.columns =  df_topset.columns.apply(pd.to_numeric, errors='coerce')
     df_append = pd.DataFrame([[0] * len(df_topset.columns)], columns = df_topset.columns)
     df_append.loc[0:1,'TopName'] = 'GROUND LEVEL'
     df_append.loc[0:1,'TVD'] = 32
