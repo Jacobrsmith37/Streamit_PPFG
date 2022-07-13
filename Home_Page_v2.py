@@ -52,7 +52,12 @@ st.sidebar.image(image_logo)
 
 upload_topset = st.sidebar.file_uploader('Upload a csv file containing Topset data')
 
+if upload_topset is not None:
+  
+        df_topset = pd.read_csv(upload_topset)
 
+    else: st.warning('Upload your Topset (must include TVD values)')    
+  
   
 
 
@@ -158,13 +163,8 @@ def calc():
     
 st.cache()    
 def interactive_plot():
-    if upload_topset is not None:
-  
-        df_topset = pd.read_csv(upload_topset)
-
-    else: st.warning('Upload your Topset (must include TVD values)')    
-  
-    #global df_topset
+    
+    global df_topset
     global df_ovbd
     global df_lith
     st.write('Here is your uploaded and editable Topset:')
