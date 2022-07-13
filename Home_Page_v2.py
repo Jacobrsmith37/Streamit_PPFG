@@ -710,29 +710,22 @@ def interactive_plot():
     
     
     
-    def FG_calcs():
+   def FG_calcs():
         
         for i in range(len(df_ovbd)):
             depth_value = df_ovbd['DEPTH'][i]
 
             for index, row in enumerate(merge_df.values):
                 try:
-                    Kf = (merge_df.iloc[index, 3])
-                    Ts = (merge_df.iloc[index, 4])
-                    
                     if (depth_value >= merge_df.iloc[index, 1]) & (depth_value <= merge_df.iloc[index + 1, 1]):
-   
-                            df_ovbd['Ko'][i] = Kf
-                            df_ovbd['Ts'][i] = Ts
+                        df_ovbd['Ko'][i] = float(merge_df.iloc[index, 3])
+                        #st.write(df_ovbd)
+                        df_ovbd['Ts'][i] = float(merge_df.iloc[index, 4])
 
                 except:
-                    Kf = (merge_df.iloc[index, 3])
-                    Ts = (merge_df.iloc[index, 4])
-                    
                     if depth_value > merge_df['TVD'].iloc[index - 1]:
-                            df_ovbd['Ko'][i] = Kf
-                            df_ovbd['Ts'][i] = Ts
-                        
+                        df_ovbd['Ko'][i] = float(merge_df.iloc[index, 3])
+                        df_ovbd['Ts'][i] = float(merge_df.iloc[index, 4])
                         
                     
 
