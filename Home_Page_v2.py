@@ -186,7 +186,7 @@ def interactive_plot():
     
     #df_topset = df_append.append(df_topset, ignore_index=True)   DEPRECATED
     
-    
+    df_topset[['TVD','MD']] =  df_topset[['TVD','MD']].apply(pd.to_numeric, errors='coerce')
     
     
     
