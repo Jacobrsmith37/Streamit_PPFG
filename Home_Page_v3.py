@@ -767,7 +767,7 @@ def interactive_plot():
     
     
     plot.update_yaxes(range = [max(new_df['TVD']) + 500, 0]) #, autorange = 'reversed')
-    
+    plot.update_xaxes(nticks = 20, showgrid=True, gridcolor = 'lightgray')
     title_input = st.sidebar.text_input('Enter Well Name' ,'Well Name')
     plot.update_layout(title_text = (title_input  + '<br> Pore Pressure Log Plot' ), 
                        title_x = .5,  
