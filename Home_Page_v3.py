@@ -758,12 +758,12 @@ def interactive_plot():
     
     plot = go.Figure()
     plot.add_trace(go.Scatter( x = df_ovbd["OVBD_PPG"], y = df_ovbd["DEPTH"], name = 'Overburden'))
-    plot.add_trace(go.Scatter(x = df_LS['LS_PPG'], y = df_LS['DEPTH'], name = 'LS Pore Pressure'))
-    plot.add_trace(go.Scatter(x = df_ML['ML_PPG'], y = df_ML['DEPTH'], name = 'ML Pore Pressure'))
-    plot.add_trace(go.Scatter(x = df_HS['HS_PPG'], y = df_HS['DEPTH'], name = 'HS Pore Pressure'))
-    plot.add_trace(go.Scatter(x = df_ovbd['LS_FG_PPG'], y = df_ovbd['DEPTH'], name = 'LS Frac Gradient'))
-    plot.add_trace(go.Scatter(x = df_ovbd['ML_FG_PPG'], y = df_ovbd['DEPTH'], name = 'ML Frac Gradient'))
-    plot.add_trace(go.Scatter(x = df_ovbd['HS_FG_PPG'], y = df_ovbd['DEPTH'], name = 'HS Frac Gradient'))
+    plot.add_trace(go.Scatter(x = df_LS['LS_PPG'], y = df_LS['DEPTH'], line_dash = 'dot', name = 'LS Pore Pressure', marker_color ="#4169E1"))
+    plot.add_trace(go.Scatter(x = df_ML['ML_PPG'], y = df_ML['DEPTH'], line_dash = 'dot', name = 'ML Pore Pressure', marker_color ="#00C957"))
+    plot.add_trace(go.Scatter(x = df_HS['HS_PPG'], y = df_HS['DEPTH'], line_dash = 'dot', name = 'HS Pore Pressure', marker_color ="#FF4040"))
+    plot.add_trace(go.Scatter(x = df_ovbd['LS_FG_PPG'], y = df_ovbd['DEPTH'], name = 'LS Frac Gradient', marker_color ="#4169E1"))
+    plot.add_trace(go.Scatter(x = df_ovbd['ML_FG_PPG'], y = df_ovbd['DEPTH'], name = 'ML Frac Gradient', marker_color ="#00C957"))
+    plot.add_trace(go.Scatter(x = df_ovbd['HS_FG_PPG'], y = df_ovbd['DEPTH'], name = 'HS Frac Gradient', marker_color ="#FF4040"))
     
     
     plot.update_yaxes(range = [max(new_df['TVD']) + 500, 0]) #, autorange = 'reversed')
