@@ -766,7 +766,7 @@ def interactive_plot():
     plot.add_trace(go.Scatter(x = df_ovbd['HS_FG_PPG'], y = df_ovbd['DEPTH'], name = 'HS Frac Gradient', marker_color ="#FF4040"))
     
     
-    plot.update_yaxes(range = [max(new_df['TVD']) + 500, 0]) #, autorange = 'reversed')
+    plot.update_yaxes(nticks = 30, range = [max(new_df['TVD']) + 500, 0]) #, autorange = 'reversed')
     plot.update_xaxes(nticks = 40, showgrid=True, gridcolor = 'lightgray')
     
     title_input = st.sidebar.text_input('Enter Well Name' ,'Well Name')
