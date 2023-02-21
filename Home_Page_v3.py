@@ -429,6 +429,15 @@ def interactive_plot():
     with col2.expander('Most Likely Pore Pressure Inputs (PSI)'):
         if 'Most Likely Inyan Kara' not in st.session_state:
             ML_inyan_kara = st.number_input('Most Likely Inyan Kara', value = 3600)
+         
+        
+        # added 02/21/2023   
+        if 'Most Likely Inyan Kara 2' not in st.session_state:
+            ML_inyan_kara_2 = st.number_input('Most Likely Inyan Kara 2', value = 0)
+            
+            
+   
+            
         if 'Most Likely Amsden' not in st.session_state:
             ML_20_high_amsden = st.number_input('Most Likely Amsden', value = 0)  
         if 'Most Likely Frobisher-Alida' not in st.session_state:
@@ -440,6 +449,13 @@ def interactive_plot():
     with col3.expander('High Side Pore Pressure Inputs (PSI)'):
         if 'High Side Inyan Kara' not in st.session_state:
             HS_inyan_kara = st.number_input('High Side Inyan Kara', value = 3700)
+            
+            # added 02/21/2023            
+        if 'High Side Inyan Kara 2' not in st.session_state:
+            HS_inyan_kara_2 = st.number_input('High Side Inyan Kara 2', value = 3700)
+            
+            
+            
         if 'High Side Amsden' not in st.session_state:
             HS_20_high_amsden = st.number_input('High Side Amsden', value = 0)  
         if 'High Side Frobisher-Alida' not in st.session_state:
@@ -590,6 +606,32 @@ def interactive_plot():
                  (int(inyan_kara_upload.TVD) + 20),
                  (int(swift_upload.TVD))):
                     df_ML['ML_PSI'][i] =  (ML_Formation_water_Density_2 * 20) + (df_ML['ML_PSI'][i-1])     
+                
+                
+                
+                #added 02/21/2023
+         for i in range(len(df_ML)): 
+            if ML_inyan_kara_2 == 0:
+                continue
+            if df_ML['DEPTH'][i] in range(
+                 (int(inyan_kara_upload_2.TVD)),
+                 (int(inyan_kara_upload_2.TVD) + 20)):
+                    df_ML['ML_PSI'][i] = ML_inyan_kara_2
+
+        for i in range(len(df_ML)):                 
+            if ML_inyan_kara_2 == 0:
+                continue
+            if df_ML['DEPTH'][i] in range(
+                 (int(inyan_kara_upload_2.TVD) + 20),
+                 (int(swift_upload.TVD))):
+                    df_ML['ML_PSI'][i] =  (ML_Formation_water_Density_2 * 20) + (df_ML['ML_PSI'][i-1])     
+
+                
+                
+                
+                
+                
+                
 
         for i in range(len(df_ML)):                 
             if ML_20_high_amsden == 0:
@@ -669,6 +711,28 @@ def interactive_plot():
                  (int(swift_upload.TVD))):
                     df_HS['HS_PSI'][i] =  (HS_Formation_water_Density_2 * 20) + (df_HS['HS_PSI'][i-1])
 
+                
+                
+                # added 02/21/2023
+        for i in range(len(df_HS)): 
+            if HS_inyan_kara_2 == 0:
+                continue
+            if df_HS['DEPTH'][i] in range(
+                 (int(inyan_kara_upload_2.TVD)),
+                 (int(inyan_kara_upload_2.TVD) + 20)):
+                    df_HS['HS_PSI'][i] = HS_inyan_kara_2
+
+        for i in range(len(df_HS)):                 
+            if HS_inyan_kara_2 == 0:
+                    continue
+            if df_HS['DEPTH'][i] in range(
+                 (int(inyan_kara_upload_2.TVD) + 20),
+                 (int(swift_upload.TVD))):
+                    df_HS['HS_PSI'][i] =  (HS_Formation_water_Density_2 * 20) + (df_HS['HS_PSI'][i-1])
+
+                
+                
+                
         for i in range(len(df_HS)):                 
             if HS_20_high_amsden == 0:
                 continue
