@@ -150,10 +150,9 @@ def troubleshooting():
     st.subheader('Common Errors and How to Fix Them')
     st.write('- Your topset should have a minimum of 3 colums: "TopName", "TVD", and either "MD" or "Lithology" or whatever you would like')
     st.write('- TopNames must be spelled correctly with appropriate underscores, etc.. Example: change "Rival" to "Frobisher-Alida_Interval"')
-    st.write('- Change the Groud Level Lithology to "sand"')
     st.write('- If you change a pressure on the bottom containers and get an error, check that your Topset names are spelled correctly and are present. These will match the standard Petrel nomenclature eg LOWER_BAKKEN_SHALE and INYAN_KARA')
     st.write('- If you want to differentiate Inyan Kara into 2 lobes with different pressures, ensure you add a top called "Inyan_Kara_2" and a TVD before you drag and drop your topset')
-    
+    st.write('- Lithology needs to be lowercase. You can add any you need with the Add Lithology function, but the standards built in are: *shale, sand, limestone, dolomite, anhydrite, dolomitic limestone, siltstone, coal*')
     
     
     
