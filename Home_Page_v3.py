@@ -610,7 +610,7 @@ def interactive_plot():
                 
                 
                 #added 02/21/2023
-         for i in range(len(df_ML)): 
+        for i in range(len(df_ML)): 
             if ML_inyan_kara_2 == 0:
                 continue
             if df_ML['DEPTH'][i] in range(
