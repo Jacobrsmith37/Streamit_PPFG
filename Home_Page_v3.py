@@ -871,10 +871,11 @@ def interactive_plot():
     
     title_input = st.sidebar.text_input('Enter Well Name' ,'Well Name')
     plot.update_layout(title_text = (title_input  + '<br>Pore Pressure Log Plot'), 
-                       title_x = .5, 
+                       title_x = .3, 
                        xaxis_title="PPG",
                        yaxis_title="TVD",
                        height = 1200,
+                       width = 750,
                        template='plotly')
     def Topnames():
             for row in merge_df.iterrows():
