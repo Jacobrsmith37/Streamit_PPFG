@@ -413,6 +413,11 @@ def interactive_plot():
     with col1.expander("Low Side Pore Pressure Inputs (PSI)"):
         if 'Low Side Inyan Kara' not in st.session_state:
             LS_inyan_kara = st.number_input('Low Side Inyan Kara', value = 3200)
+            
+         # Inyan Kara 2 added 02/21/2023   
+        if 'Low Side Inyan Kara 2' not in st.session_state:
+            LS_inyan_kara_2 = st.number_input('Low Side Inyan Kara2', value = 3200)    
+            
         if 'Low Side Amsden' not in st.session_state:
             LS_20_high_amsden = st.number_input('Low Side Amsden', value = 0)  
         if 'Low Side Frobisher-Alida' not in st.session_state:
