@@ -169,6 +169,7 @@ def interactive_plot():
     df_append = pd.DataFrame([[0] * len(df_topset.columns)], columns = df_topset.columns)
     df_append.loc[0:1,'TopName'] = 'GROUND LEVEL'
     df_append.loc[0:1,'TVD'] = 32
+    df_append.loc[0:1,'Lithology'] = 'sand'
     df_topset = pd.concat([df_append, df_topset], ignore_index = True)
     
    
