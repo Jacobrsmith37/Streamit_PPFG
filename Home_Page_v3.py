@@ -492,7 +492,7 @@ def interactive_plot():
                     df_LS['LS_PSI'][i] =  (LS_Formation_water_Density_2 * 20) + (df_LS['LS_PSI'][i-1])  
 
                 # added 02/21/2023
-         for i in range(len(df_LS)):
+        for i in range(len(df_LS)):
 
             if LS_inyan_kara_2 == 0:
                 continue
@@ -801,7 +801,7 @@ def interactive_plot():
     plot.update_xaxes(nticks = 40, showgrid=True, gridcolor = 'lightgray')
     
     title_input = st.sidebar.text_input('Enter Well Name' ,'Well Name')
-    plot.update_layout(title_text = (title_input  + '<br> Pore Pressure Log Plot' ), 
+    plot.update_layout(title_text = (title_input  + '<br>Pore Pressure Log Plot'), 
                        title_x = .5, 
                        xaxis_title="PPG",
                        yaxis_title="TVD",
