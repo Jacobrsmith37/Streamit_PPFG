@@ -416,7 +416,7 @@ def interactive_plot():
             
          # Inyan Kara 2 added 02/21/2023   
         if 'Low Side Inyan Kara 2' not in st.session_state:
-            LS_inyan_kara_2 = st.number_input('Low Side Inyan Kara 2', value = 4000)    
+            LS_inyan_kara_2 = st.number_input('Low Side Inyan Kara 2', value = 0)    
             
         if 'Low Side Amsden' not in st.session_state:
             LS_20_high_amsden = st.number_input('Low Side Amsden', value = 0)  
@@ -500,15 +500,12 @@ def interactive_plot():
                   (int (inyan_kara_upload_2.TVD)),
                   (int(inyan_kara_upload_2.TVD) + 20)):
                      df_LS['LS_PSI'][i] = LS_inyan_kara_2
-
-                
-                
                 
         for i in range(len(df_LS)):                
-            if LS_inyan_kara == 0:
+            if LS_inyan_kara_2 == 0:
                 continue
             if df_LS['DEPTH'][i] in range(
-                 (int(inyan_kara_upload.TVD) + 20),
+                 (int(inyan_kara_upload_2.TVD) + 20),
                  (int(swift_upload.TVD))):
                     df_LS['LS_PSI'][i] =  (LS_Formation_water_Density_2 * 20) + (df_LS['LS_PSI'][i-1])  
                 
