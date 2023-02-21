@@ -109,19 +109,14 @@ def calc():
 
     st.write('Mud Weight to PSI Calculator')
 
-
     def ppg_to_psi():
         st.session_state.psi = st.session_state.ppg * st.session_state.depth * .052
-
-
 
     def psi_to_ppg():
         st.session_state.ppg = st.session_state.psi / st.session_state.depth / .052
 
-
     def depth():
         st.session_state.depth 
-
 
     def clear():
         st.session_state.depth, st.session_state.psi, st.session_state.ppg = 0,0,0
@@ -147,7 +142,17 @@ def calc():
     st.button('Clear Inputs', on_click = clear)        
 
     
+    
+   #added 02/21/2023 
+options_2 = st.sidebar.radio('Troubleshooting?', ['No', 'Yes'])
+def troubleshooting():
 
+    st.write('Common Errors and How to Fix Them')
+    st.write('Your topset should have a minimum of 3 colums: TopName, TVD, and either MD or Lithology or whatever you would like')
+
+    
+    
+    
     
 def interactive_plot():
     global df_topset
@@ -916,6 +921,12 @@ home()
 if options == 'Yes':
     calc()
 else:
-    ''
+  ''
+#added 02/21/2023
+if options_2 == 'Yes':
+    troubleshooting()
+else:
+    ''  
+    
 interactive_plot()
 data_summary()
