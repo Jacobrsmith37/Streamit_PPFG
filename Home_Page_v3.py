@@ -147,8 +147,10 @@ def calc():
 options_2 = st.sidebar.radio('Troubleshooting?', ['No', 'Yes'])
 def troubleshooting():
 
-    st.write('Common Errors and How to Fix Them')
-    st.write('Your topset should have a minimum of 3 colums: TopName, TVD, and either MD or Lithology or whatever you would like')
+    st.header('Common Errors and How to Fix Them')
+    st.write('- Your topset should have a minimum of 3 colums: TopName, TVD, and either MD or Lithology or whatever you would like')
+    st.write('- TopNames must be spelled correctly with appropriate underscores, etc.. Example: change "Rival" to "Frobisher-Alida_Interval"')
+    st.write('- Change the Groud Level Lithology to "sand"')
 
     
     
