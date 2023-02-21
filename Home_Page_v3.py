@@ -416,7 +416,7 @@ def interactive_plot():
             
          # Inyan Kara 2 added 02/21/2023   
         if 'Low Side Inyan Kara 2' not in st.session_state:
-            LS_inyan_kara_2 = st.number_input('Low Side Inyan Kara2', value = 3200)    
+            LS_inyan_kara_2 = st.number_input('Low Side Inyan Kara 2', value = 4000)    
             
         if 'Low Side Amsden' not in st.session_state:
             LS_20_high_amsden = st.number_input('Low Side Amsden', value = 0)  
@@ -491,6 +491,31 @@ def interactive_plot():
                  (int(swift_upload.TVD))):
                     df_LS['LS_PSI'][i] =  (LS_Formation_water_Density_2 * 20) + (df_LS['LS_PSI'][i-1])  
 
+                # added 02/21/2023
+         for i in range(len(df_LS)):
+
+            if LS_inyan_kara_2 == 0:
+                continue
+            if df_LS['DEPTH'][i] in range(
+                  (int (inyan_kara_upload_2.TVD)),
+                  (int(inyan_kara_upload_2.TVD) + 20)):
+                     df_LS['LS_PSI'][i] = LS_inyan_kara_2
+
+                
+                
+                
+        for i in range(len(df_LS)):                
+            if LS_inyan_kara == 0:
+                continue
+            if df_LS['DEPTH'][i] in range(
+                 (int(inyan_kara_upload.TVD) + 20),
+                 (int(swift_upload.TVD))):
+                    df_LS['LS_PSI'][i] =  (LS_Formation_water_Density_2 * 20) + (df_LS['LS_PSI'][i-1])  
+                
+                
+                
+                
+                
 
         for i in range(len(df_LS)):
             if LS_20_high_amsden == 0:
@@ -713,6 +738,7 @@ def interactive_plot():
     belle_fourche_upload = new_df[new_df['TopName'] == 'BELLE_FOURCHE']
     mowry_upload = new_df[new_df['TopName'] == 'MOWRY']
     inyan_kara_upload = new_df[new_df['TopName'] == 'INYAN_KARA']
+    inyan_kara_upload_2 = new_df[new_df['TopName'] == 'INYAN_KARA_2']
     swift_upload = new_df[new_df['TopName'] == 'SWIFT']
     rierdon_upload = new_df[new_df['TopName'] == 'RIERDON']
     amsden_upload = new_df[new_df['TopName'] == 'AMSDEN']
