@@ -149,10 +149,12 @@ def troubleshooting():
 
     st.subheader('Common Errors and How to Fix Them')
     st.write('- Your topset should have a minimum of 3 colums: "TopName", "TVD", and either "MD" or "Lithology" or whatever you would like')
+    st.write('- It is more convenient to add "Lithology" column and fill it in appropriately on your topset prior to upload.')
+    st.write('- Lithology needs to be lowercase. You can add any you need with the Add Lithology function, but the standards built in are: *shale, sand, limestone, dolomite, anhydrite, dolomitic limestone, siltstone, coal*')
     st.write('- TopNames must be spelled correctly with appropriate underscores, etc.. Example: change "Rival" to "Frobisher-Alida_Interval"')
     st.write('- If you change a pressure on the bottom containers and get an error, check that your Topset names are spelled correctly and are present. These will match the standard Petrel nomenclature eg LOWER_BAKKEN_SHALE and INYAN_KARA')
     st.write('- If you want to differentiate Inyan Kara into 2 lobes with different pressures, ensure you add a top called "Inyan_Kara_2" and a TVD before you drag and drop your topset')
-    st.write('- Lithology needs to be lowercase. You can add any you need with the Add Lithology function, but the standards built in are: *shale, sand, limestone, dolomite, anhydrite, dolomitic limestone, siltstone, coal*')
+    
     
     
     
@@ -420,7 +422,7 @@ def interactive_plot():
     col1, col2, col3 = st.columns(3)
     with col1.expander("Low Side Pore Pressure Inputs (PSI)"):
         if 'Low Side Inyan Kara' not in st.session_state:
-            LS_inyan_kara = st.number_input('Low Side Inyan Kara', value = 3200)
+            LS_inyan_kara = st.number_input('Low Side Inyan Kara', value = 0)
             
          # Inyan Kara 2 added 02/21/2023   
         if 'Low Side Inyan Kara 2' not in st.session_state:
@@ -436,7 +438,7 @@ def interactive_plot():
 
     with col2.expander('Most Likely Pore Pressure Inputs (PSI)'):
         if 'Most Likely Inyan Kara' not in st.session_state:
-            ML_inyan_kara = st.number_input('Most Likely Inyan Kara', value = 3600)
+            ML_inyan_kara = st.number_input('Most Likely Inyan Kara', value = 0)
          
         
         # added 02/21/2023   
@@ -456,11 +458,11 @@ def interactive_plot():
             
     with col3.expander('High Side Pore Pressure Inputs (PSI)'):
         if 'High Side Inyan Kara' not in st.session_state:
-            HS_inyan_kara = st.number_input('High Side Inyan Kara', value = 3700)
+            HS_inyan_kara = st.number_input('High Side Inyan Kara', value = 0)
             
             # added 02/21/2023            
         if 'High Side Inyan Kara 2' not in st.session_state:
-            HS_inyan_kara_2 = st.number_input('High Side Inyan Kara 2', value = 3700)
+            HS_inyan_kara_2 = st.number_input('High Side Inyan Kara 2', value = 0)
             
             
             
