@@ -43,7 +43,7 @@ las = lasio.read("OVBD_PSI.las")
 
 # Add a title and intro text
 st.title('PPFG Data Explorer')
-st.subheader('Website coded by Jacob Smith 2022')
+st.write('Website coded by Jacob Smith 2022')
 st.text('This is a web app to allow exploration of PPFG Data')
 
 # Sidebar setup
