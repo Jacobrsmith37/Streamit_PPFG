@@ -371,9 +371,19 @@ def interactive_plot():
             Base_Zone_4 = st.number_input('Base Zone 4', value = 16000)
             
         if 'Base Zone 5' not in st.session_state:
-            Base_Zone_5 = st.number_input('Base Zone 5', value = 17000)    
+            Base_Zone_5 = st.number_input('Base Zone 5', value = 17000)   
+            
+            
+            
+            #added 02/23/2023
+    with col2.expander('DFIT Data Inputs'):
+        if 'DFIT Pont 1' not in st.session_state:
+            DFIT_1 = st.number_input('DFIT Pont 1', value = 0)   
 
 
+            
+            
+            
     col1, col2, col3 = st.columns(3)    
     with col1.expander('Low Side Water Densities'):
         if 'Low Side Sea_Water_Density' not in st.session_state:
@@ -869,7 +879,7 @@ def interactive_plot():
     plot.add_trace(go.Scatter(x = df_ovbd['HS_FG_PPG'], y = df_ovbd['DEPTH'], name = 'HS Frac Gradient', marker_color ="#FF4040"))
    
     #added 02/23/2023
-    plot.add_trace(go.Scatter(x = [12], y = [5000], name = 'DFIT Data Point', marker_color ="#000000"))
+    plot.add_trace(go.Scatter(x = [12,11], y = [5000,5500], name = 'DFIT Data Point', marker_color ="#000000"))
     
     
     plot.update_yaxes(nticks = 30, range = [max(new_df['TVD']) + 500, 0]) #, autorange = 'reversed')
