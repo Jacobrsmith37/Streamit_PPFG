@@ -922,7 +922,7 @@ def interactive_plot():
     upper_bakken_upload = new_df[new_df['TopName'] == 'UPPER_BAKKEN_SHALE']
     middle_bakken_upload = new_df[new_df['TopName'] == 'MIDDLE_BAKKEN']
     lower_bakken_upload = new_df[new_df['TopName'] == 'LOWER_BAKKEN_SHALE']
-    three_forks_upload = new_df[new_df['TopName'] == 'THREE_FORKS']
+    three_forks_upload = new_df[new_df['TopName'] == 'THREE_FORKS_1']
     birdbear_upload = new_df[new_df['TopName'] == 'BIRDBEAR']  
     
 
