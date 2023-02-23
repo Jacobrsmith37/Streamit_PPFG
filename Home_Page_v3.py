@@ -665,7 +665,7 @@ def interactive_plot():
                 
                 
                 #added 02/23/2023
-         for i in range(len(df_LS)):            
+        for i in range(len(df_LS)):            
             if LS_three_forks_1 == 0:
                 continue
             if round(df_LS['DEPTH'][i]) in range(
