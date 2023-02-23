@@ -545,7 +545,7 @@ def interactive_plot():
             ML_upper_bakken = st.number_input('Most Likely Upper Bakken', value = 8850)  
             
         if 'Most Likely Three Forks 1' not in st.session_state:
-            ML_three_forks = st.number_input('Most Likely Three Forks 1', value = 0)  
+            ML_three_forks_1 = st.number_input('Most Likely Three Forks 1', value = 0)  
             
             
     with col3.expander('High Side Pore Pressure Inputs (PSI)'):
@@ -565,7 +565,7 @@ def interactive_plot():
         if 'High Side Upper Bakken' not in st.session_state:
             HS_upper_bakken = st.number_input('High Side Upper Bakken', value = 9200)  
         if 'High Side Three Forks 1' not in st.session_state:
-            HS_three_forks = st.number_input('High Side Three Forks 1', value = 0)  
+            HS_three_forks_1 = st.number_input('High Side Three Forks 1', value = 0)  
             
 
 
