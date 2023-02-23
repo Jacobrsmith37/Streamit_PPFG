@@ -301,9 +301,10 @@ def interactive_plot():
     def dfit():
       
       def clear():
-        st.session_state.df_dfit['Depth (TVD)'], st.session_state.df_dfit['PPG']= 0,0
+        st.session_state.df_dfit['Depth (TVD)'], st.session_state.df_dfit['PPG'] = 0,0
 
-            # initialize list of lists
+            
+          # initialize list of lists
       data_dfit = []
       # Create the pandas DataFrame
       df_dfit = pd.DataFrame(data_dfit, columns = ["Depth (TVD)",'PPG'])
@@ -315,7 +316,7 @@ def interactive_plot():
 
       num_new_rows = 50
       ncol = st.session_state.df_dfit.shape[1]  # col count
-      rw = -1
+      rw = 1
 
       st.session_state.df_dfit = st.session_state.df_dfit.astype(dtype= {"Depth (TVD)":"str", "PPG":"str"})
 
