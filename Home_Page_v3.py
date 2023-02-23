@@ -544,6 +544,9 @@ def interactive_plot():
         if 'Most Likely Upper Bakken' not in st.session_state:
             ML_upper_bakken = st.number_input('Most Likely Upper Bakken', value = 8850)  
             
+        if 'Most Likely Three Forks 1' not in st.session_state:
+            ML_three_forks = st.number_input('Most Likely Three Forks 1', value = 0)  
+            
             
     with col3.expander('High Side Pore Pressure Inputs (PSI)'):
         if 'High Side Inyan Kara' not in st.session_state:
@@ -561,6 +564,8 @@ def interactive_plot():
             HS_frobisher_alida = st.number_input('High Side Frobisher-Alida', value = 0)  
         if 'High Side Upper Bakken' not in st.session_state:
             HS_upper_bakken = st.number_input('High Side Upper Bakken', value = 9200)  
+        if 'High Side Three Forks 1' not in st.session_state:
+            HS_three_forks = st.number_input('High Side Three Forks 1', value = 0)  
             
 
 
@@ -670,7 +675,7 @@ def interactive_plot():
                 continue
             if round(df_LS['DEPTH'][i]) in range(
                 (int(three_forks_upload.TVD) + 0),
-                (int(three_forks_upload.TVD) + 100)):
+                (int(three_forks_upload.TVD) + 60)):
                 df_LS['LS_PSI'][i] = LS_three_forks_1
 
 
@@ -772,7 +777,18 @@ def interactive_plot():
             if df_ML['DEPTH'][i] in range(
                  (int(upper_bakken_upload.TVD)),
                  (int(upper_bakken_upload.TVD) + 160)):
-                    df_ML['ML_PSI'][i] = ML_upper_bakken     
+                    df_ML['ML_PSI'][i] = ML_upper_bakken    
+                
+                
+                         #added 02/23/2023
+        for i in range(len(df_ML)):            
+            if ML_three_forks_1 == 0:
+                continue
+            if round(df_ML['DEPTH'][i]) in range(
+                (int(three_forks_upload.TVD) + 0),
+                (int(three_forks_upload.TVD) + 60)):
+                df_ML['ML_PSI'][i] = ML_three_forks_1
+
 
 
         
@@ -874,6 +890,17 @@ def interactive_plot():
                  (int(upper_bakken_upload.TVD)),
                  (int(upper_bakken_upload.TVD) + 160)):
                     df_HS['HS_PSI'][i] = HS_upper_bakken      
+                
+       #added 02/23/2023
+        for i in range(len(df_HS)):            
+            if HS_three_forks_1 == 0:
+                continue
+            if round(df_HS['DEPTH'][i]) in range(
+                (int(three_forks_upload.TVD) + 0),
+                (int(three_forks_upload.TVD) + 60)):
+                df_HS['HS_PSI'][i] = HS_three_forks_1
+
+            
 
                 
                 
