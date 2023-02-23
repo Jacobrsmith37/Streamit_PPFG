@@ -913,6 +913,7 @@ def interactive_plot():
     ML_calcs()
     HS_calcs()
     FG_calcs()
+    dfit()
   
 
  # Add a calculated column for PPG    
