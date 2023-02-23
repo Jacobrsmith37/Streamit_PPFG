@@ -292,6 +292,86 @@ def interactive_plot():
     
 
     
+    
+    
+    #DFIT Data added 02/23/2023
+   ######################################################################### 
+
+    
+            # initialize list of lists
+    data_dfit = [
+        [0, 0], 
+    ]
+    # Create the pandas DataFrame
+    df_dfit = pd.DataFrame(data_dfit, columns = ["Depth (TVD)",'PPG'])
+    
+    if "df_dfit" not in st.session_state:
+        st.session_state.df_dfit = pd.DataFrame(data_dfit, columns = ["Depth (TVD)",'PPG'])
+
+    st.subheader("Add DFIT Data")
+
+    num_new_rows = 50
+    ncol = st.session_state.df_dfit.shape[1]  # col count
+    rw = -1
+    
+    st.session_state.df_dfit = st.session_state.df_dfit.astype(dtype= {"Depth (TVD)":"str", "PPG":"str"})
+    
+    with st.form(key="add form", clear_on_submit= True):
+        cols = st.columns(ncol)
+        rwdta = []
+
+        for i in range(ncol):
+            rwdta.append(cols[i].text_input(st.session_state.df_dfit.columns[i]))
+
+        if st.form_submit_button("Add"):
+            if st.session_state.df_dfit.shape[0] == num_new_rows:
+                st.error("Add row limit reached. Cant add any more records..")
+            else:
+                rw = st.session_state.df_dfit.shape[0] + 1
+                st.info(f"Row: {rw} / {num_new_rows} added")
+                st.session_state.df_dfit.loc[rw] = rwdta
+
+                if st.session_state.df_dfit.shape[0] == num_new_rows:
+                    st.error("Add row limit reached...")
+
+    df_dfit = st.session_state.df_dfit    
+
+        
+        
+    options = GridOptionsBuilder.from_dataframe(
+        df_dfit, 
+        editable = True,
+        enableRowGroup = True, 
+        enableValue = True, 
+        enablePivot = True
+        )
+
+    options.configure_side_bar()
+    options.configure_selection("single")
+
+    df_dfit = AgGrid(
+        df_dfit,
+        editable = True,
+        enable_enterprise_modules = True,
+        gridOptions = options.build(), 
+        update_mode = GridUpdateMode.MODEL_CHANGED,
+        fit_columns_on_grid_load = False,
+        allow_unsafe_jscode = True)
+    
+    df_dfit = df_dfit['data'] 
+    
+    
+    
+    
+    ######################################################3
+    
+    
+    
+    
+    
+    
+    
+    
     merge_df = pd.merge(new_df, df_lith, on = ['Lithology'], how = 'inner')
     merge_df = merge_df[['TopName', 'TVD', 'Lithology', 'Kf', 'Ts', 'Plot?']].sort_values(by = ['TVD'], ascending = True)
 #     merge_df = merge_df.astype(str)
@@ -373,16 +453,7 @@ def interactive_plot():
         if 'Base Zone 5' not in st.session_state:
             Base_Zone_5 = st.number_input('Base Zone 5', value = 17000)   
             
-            
-            
-            #added 02/23/2023
-    with col2.expander('DFIT Data Inputs'):
-        if 'DFIT Pont 1' not in st.session_state:
-            DFIT_1 = st.number_input('DFIT Pont 1', value = 0)   
-
-
-            
-            
+      
             
     col1, col2, col3 = st.columns(3)    
     with col1.expander('Low Side Water Densities'):
