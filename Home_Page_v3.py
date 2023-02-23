@@ -662,8 +662,18 @@ def interactive_plot():
                 (int(upper_bakken_upload.TVD) + 0),
                 (int(lower_bakken_upload.TVD) + 10)):
                 df_LS['LS_PSI'][i] = LS_upper_bakken
+                
+                
+                #added 02/23/2023
+         for i in range(len(df_LS)):            
+            if LS_three_forks_1 == 0:
+                continue
+            if round(df_LS['DEPTH'][i]) in range(
+                (int(three_forks_upload.TVD) + 0),
+                (int(birdbear_upload.TVD) + 0)):
+                df_LS['LS_PSI'][i] = LS_three_forks_1
 
-#LS_three_forks_1
+
 ################ MOST LIKELY #######################     
         
     def ML_calcs():
