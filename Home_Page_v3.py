@@ -298,67 +298,67 @@ def interactive_plot():
     #DFIT Data added 02/23/2023
    ######################################################################### 
 
-    
+    def dfit():
             # initialize list of lists
-    data_dfit = []
-    # Create the pandas DataFrame
-    df_dfit = pd.DataFrame(data_dfit, columns = ["Depth (TVD)",'PPG'])
-    
-    if "df_dfit" not in st.session_state:
-        st.session_state.df_dfit = pd.DataFrame(data_dfit, columns = ["Depth (TVD)",'PPG'])
+      data_dfit = []
+      # Create the pandas DataFrame
+      df_dfit = pd.DataFrame(data_dfit, columns = ["Depth (TVD)",'PPG'])
 
-    st.subheader("Add DFIT Data")
+      if "df_dfit" not in st.session_state:
+          st.session_state.df_dfit = pd.DataFrame(data_dfit, columns = ["Depth (TVD)",'PPG'])
 
-    num_new_rows = 50
-    ncol = st.session_state.df_dfit.shape[1]  # col count
-    rw = -1
-    
-    st.session_state.df_dfit = st.session_state.df_dfit.astype(dtype= {"Depth (TVD)":"str", "PPG":"str"})
-    
-    with st.form(key="add dfit form", clear_on_submit= True):
-        cols = st.columns(ncol)
-        rwdta = []
+      st.subheader("Add DFIT Data")
 
-        for i in range(ncol):
-            rwdta.append(cols[i].text_input(st.session_state.df_dfit.columns[i]))
+      num_new_rows = 50
+      ncol = st.session_state.df_dfit.shape[1]  # col count
+      rw = -1
 
-        if st.form_submit_button("Add"):
-            if st.session_state.df_dfit.shape[0] == num_new_rows:
-                st.error("Add row limit reached. Cant add any more records..")
-            else:
-                rw = st.session_state.df_dfit.shape[0] + 1
-                st.info(f"Row: {rw} / {num_new_rows} added")
-                st.session_state.df_dfit.loc[rw] = rwdta
+      st.session_state.df_dfit = st.session_state.df_dfit.astype(dtype= {"Depth (TVD)":"str", "PPG":"str"})
 
-                if st.session_state.df_dfit.shape[0] == num_new_rows:
-                    st.error("Add row limit reached...")
-    st.button('Clear DFIT Inputs', on_click = clear) 
-    df_dfit = st.session_state.df_dfit    
+      with st.form(key="add dfit form", clear_on_submit= True):
+          cols = st.columns(ncol)
+          rwdta = []
 
-        
-        
-    options_2 = GridOptionsBuilder.from_dataframe(
-        df_dfit, 
-        editable = True,
-        enableRowGroup = True, 
-        enableValue = True, 
-        enablePivot = True
-        )
+          for i in range(ncol):
+              rwdta.append(cols[i].text_input(st.session_state.df_dfit.columns[i]))
 
-    options_2.configure_side_bar()
-    options_2.configure_selection("single")
+          if st.form_submit_button("Add"):
+              if st.session_state.df_dfit.shape[0] == num_new_rows:
+                  st.error("Add row limit reached. Cant add any more records..")
+              else:
+                  rw = st.session_state.df_dfit.shape[0] + 1
+                  st.info(f"Row: {rw} / {num_new_rows} added")
+                  st.session_state.df_dfit.loc[rw] = rwdta
 
-    df_dfit = AgGrid(
-        df_dfit,
-        editable = True,
-        enable_enterprise_modules = True,
-        gridOptions = options_2.build(), 
-        update_mode = GridUpdateMode.MODEL_CHANGED,
-        fit_columns_on_grid_load = False,
-        allow_unsafe_jscode = True)
-    
-    df_dfit = df_dfit['data'] 
-   
+                  if st.session_state.df_dfit.shape[0] == num_new_rows:
+                      st.error("Add row limit reached...")
+      st.button('Clear DFIT Inputs', on_click = clear) 
+      df_dfit = st.session_state.df_dfit    
+
+
+
+      options_2 = GridOptionsBuilder.from_dataframe(
+          df_dfit, 
+          editable = True,
+          enableRowGroup = True, 
+          enableValue = True, 
+          enablePivot = True
+          )
+
+      options_2.configure_side_bar()
+      options_2.configure_selection("single")
+
+      df_dfit = AgGrid(
+          df_dfit,
+          editable = True,
+          enable_enterprise_modules = True,
+          gridOptions = options_2.build(), 
+          update_mode = GridUpdateMode.MODEL_CHANGED,
+          fit_columns_on_grid_load = False,
+          allow_unsafe_jscode = True)
+
+      df_dfit = df_dfit['data'] 
+
     
     
     
@@ -1019,4 +1019,5 @@ else:
     ''  
     
 interactive_plot()
+dfit()
 data_summary()
