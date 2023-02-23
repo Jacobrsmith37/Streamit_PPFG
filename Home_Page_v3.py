@@ -670,7 +670,7 @@ def interactive_plot():
                 continue
             if round(df_LS['DEPTH'][i]) in range(
                 (int(three_forks_upload.TVD) + 0),
-                (int(birdbear_upload.TVD) + 0)):
+                (int(three_forks_upload.TVD) + 100)):
                 df_LS['LS_PSI'][i] = LS_three_forks_1
 
 
