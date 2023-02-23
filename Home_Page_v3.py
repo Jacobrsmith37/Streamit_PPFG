@@ -1019,5 +1019,5 @@ else:
     ''  
     
 interactive_plot()
-dfit()
+
 data_summary()
