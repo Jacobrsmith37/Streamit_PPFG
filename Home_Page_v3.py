@@ -316,7 +316,7 @@ def interactive_plot():
 
       num_new_rows = 50
       ncol = st.session_state.df_dfit.shape[1]  # col count
-      rw = 1
+      rw = 0
 
       st.session_state.df_dfit = st.session_state.df_dfit.astype(dtype= {"Depth (TVD)":"str", "PPG":"str"})
 
