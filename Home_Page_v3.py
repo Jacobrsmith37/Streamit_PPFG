@@ -163,6 +163,7 @@ def interactive_plot():
     global df_topset
     global df_ovbd
     global df_lith
+    global df_dfit
     st.write('Here is your uploaded and editable Topset:')
     
 
@@ -299,9 +300,7 @@ def interactive_plot():
 
     
             # initialize list of lists
-    data_dfit = [
-        [0, 0], 
-    ]
+    data_dfit = []
     # Create the pandas DataFrame
     df_dfit = pd.DataFrame(data_dfit, columns = ["Depth (TVD)",'PPG'])
     
