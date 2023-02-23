@@ -316,7 +316,7 @@ def interactive_plot():
     
     st.session_state.df_dfit = st.session_state.df_dfit.astype(dtype= {"Depth (TVD)":"str", "PPG":"str"})
     
-    with st.form(key="add form", clear_on_submit= True):
+    with st.form(key="add dfit form", clear_on_submit= True):
         cols = st.columns(ncol)
         rwdta = []
 
@@ -338,7 +338,7 @@ def interactive_plot():
 
         
         
-    options = GridOptionsBuilder.from_dataframe(
+    options_2 = GridOptionsBuilder.from_dataframe(
         df_dfit, 
         editable = True,
         enableRowGroup = True, 
@@ -346,14 +346,14 @@ def interactive_plot():
         enablePivot = True
         )
 
-    options.configure_side_bar()
-    options.configure_selection("single")
+    options_2.configure_side_bar()
+    options_2.configure_selection("single")
 
     df_dfit = AgGrid(
         df_dfit,
         editable = True,
         enable_enterprise_modules = True,
-        gridOptions = options.build(), 
+        gridOptions = options_2.build(), 
         update_mode = GridUpdateMode.MODEL_CHANGED,
         fit_columns_on_grid_load = False,
         allow_unsafe_jscode = True)
