@@ -888,7 +888,7 @@ def interactive_plot():
                 continue
             if df_HS['DEPTH'][i] in range(
                  (int(upper_bakken_upload.TVD)),
-                 (int(lower_bakken_upload.TVD) + 160)):
+                 (int(lower_bakken_upload.TVD) + 0)):
                     df_HS['HS_PSI'][i] = HS_upper_bakken      
                 
        #added 02/23/2023
