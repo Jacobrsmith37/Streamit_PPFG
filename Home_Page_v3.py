@@ -519,7 +519,10 @@ def interactive_plot():
         if 'Low Side Frobisher-Alida' not in st.session_state:
             LS_frobisher_alida = st.number_input('Low Side Frobisher-Alida', value = 0)  
         if 'Low Side Upper Bakken' not in st.session_state:
-            LS_upper_bakken = st.number_input('Low Side Upper Bakken', value = 8400)  
+            LS_upper_bakken = st.number_input('Low Side Upper Bakken', value = 8400) 
+        #added 02/23/2023
+        if 'Low Side Three Forks 1' not in st.session_state:
+            LS_three_forks_1 = st.number_input('Low Side Three Forks 1', value = 0) 
             
 
     with col2.expander('Most Likely Pore Pressure Inputs (PSI)'):
@@ -657,10 +660,10 @@ def interactive_plot():
                 continue
             if round(df_LS['DEPTH'][i]) in range(
                 (int(upper_bakken_upload.TVD) + 0),
-                (int(upper_bakken_upload.TVD) + 160)):
+                (int(lower_bakken_upload.TVD) + 10)):
                 df_LS['LS_PSI'][i] = LS_upper_bakken
 
-
+#LS_three_forks_1
 ################ MOST LIKELY #######################     
         
     def ML_calcs():
