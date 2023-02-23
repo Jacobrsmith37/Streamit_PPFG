@@ -358,7 +358,7 @@ def interactive_plot():
         allow_unsafe_jscode = True)
     
     df_dfit = df_dfit['data'] 
-    
+    st.button('Clear Inputs', on_click = clear) 
     
     
     
