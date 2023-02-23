@@ -665,7 +665,7 @@ def interactive_plot():
                 continue
             if round(df_LS['DEPTH'][i]) in range(
                 (int(upper_bakken_upload.TVD) + 0),
-                (int(lower_bakken_upload.TVD) + 10)):
+                (int(lower_bakken_upload.TVD) + 0)):
                 df_LS['LS_PSI'][i] = LS_upper_bakken
                 
                 
@@ -776,7 +776,7 @@ def interactive_plot():
                 continue
             if df_ML['DEPTH'][i] in range(
                  (int(upper_bakken_upload.TVD)),
-                 (int(upper_bakken_upload.TVD) + 160)):
+                 (int(lower_bakken_upload.TVD) + 0)):
                     df_ML['ML_PSI'][i] = ML_upper_bakken    
                 
                 
@@ -888,7 +888,7 @@ def interactive_plot():
                 continue
             if df_HS['DEPTH'][i] in range(
                  (int(upper_bakken_upload.TVD)),
-                 (int(upper_bakken_upload.TVD) + 160)):
+                 (int(lower_bakken_upload.TVD) + 160)):
                     df_HS['HS_PSI'][i] = HS_upper_bakken      
                 
        #added 02/23/2023
