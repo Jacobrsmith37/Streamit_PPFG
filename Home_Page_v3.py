@@ -991,7 +991,7 @@ def interactive_plot():
     plot.add_trace(go.Scatter(x = df_ovbd['HS_FG_PPG'], y = df_ovbd['DEPTH'], name = 'HS Frac Gradient', marker_color ="#FF4040"))
    
     #added 02/23/2023
-    #plot.add_trace(go.Scatter(x = df_dfit['PPG'], y = df_dfit['Depth (TVD)'], name = 'DFIT Data Point', mode='markers', marker_color ="#000000"))
+    plot.add_trace(go.Scatter(x = df_dfit['PPG'], y = df_dfit['Depth (TVD)'], name = 'DFIT Data Point', mode='markers', marker_color ="#000000"))
     
     
     plot.update_yaxes(nticks = 30, range = [max(new_df['TVD']) + 500, 0]) #, autorange = 'reversed')
