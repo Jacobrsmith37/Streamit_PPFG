@@ -149,7 +149,7 @@ options_2 = st.sidebar.radio('Troubleshooting?', ['No', 'Yes'])
 def troubleshooting():
 
     st.subheader('Common Errors and How to Fix Them')
-    st.write('- Your topset should have a minimum of 3 colums: "TopName", "TVD", and either "MD" or "Lithology" or whatever you would like')
+    st.write('- Your topset should have a minimum of 4 colums: "TopName", "TVD", and either "MD" or "Lithology" or whatever you would like, so long as there is 4 total')
     st.write('- It is more convenient to add "Lithology" column and fill it in appropriately on your topset prior to upload.')
     st.write('- Lithology needs to be lowercase. You can add any you need with the Add Lithology function, but the standards built in are: *shale, sand, limestone, dolomite, anhydrite, dolomitic limestone, siltstone, coal*')
     st.write('- TopNames must be spelled correctly with appropriate underscores, etc.. Example: change "Rival" to "Frobisher-Alida_Interval"')
