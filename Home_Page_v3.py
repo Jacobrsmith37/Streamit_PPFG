@@ -160,72 +160,72 @@ def troubleshooting():
     
   #DFIT Data added 02/23/2023
    ######################################################################### 
-options_3 = st.sidebar.radio('Do you have DFIT data?', ['No', 'Yes'])
-def dfit():  
+# options_3 = st.sidebar.radio('Do you have DFIT data?', ['No', 'Yes'])
+# def dfit():  
     
-        # initialize list of lists
-    data_dfit = []
-    # Create the pandas DataFrame
-    df_dfit = pd.DataFrame(data_dfit, columns = ["Depth (TVD)",'PPG'])
+    # initialize list of lists
+data_dfit = []
+# Create the pandas DataFrame
+df_dfit = pd.DataFrame(data_dfit, columns = ["Depth (TVD)",'PPG'])
 
-    if "df_dfit" not in st.session_state:
-        st.session_state.df_dfit = pd.DataFrame(data_dfit, columns = ["Depth (TVD)",'PPG'])
+if "df_dfit" not in st.session_state:
+    st.session_state.df_dfit = pd.DataFrame(data_dfit, columns = ["Depth (TVD)",'PPG'])
 
-    st.subheader("Add DFIT Data")
+st.subheader("Add DFIT Data")
 
-    num_new_rows = 50
-    ncol = st.session_state.df_dfit.shape[1]  # col count
-    rw = 0
+num_new_rows = 50
+ncol = st.session_state.df_dfit.shape[1]  # col count
+rw = 0
 
-    st.session_state.df_dfit = st.session_state.df_dfit.astype(dtype= {"Depth (TVD)":"str", "PPG":"str"})
+st.session_state.df_dfit = st.session_state.df_dfit.astype(dtype= {"Depth (TVD)":"str", "PPG":"str"})
 
-    with st.form(key="add dfit form", clear_on_submit= True):
-        cols = st.columns(ncol)
-        rwdta = []
+with st.form(key="add dfit form", clear_on_submit= True):
+    cols = st.columns(ncol)
+    rwdta = []
 
-        for i in range(ncol):
-            rwdta.append(cols[i].text_input(st.session_state.df_dfit.columns[i]))
+    for i in range(ncol):
+        rwdta.append(cols[i].text_input(st.session_state.df_dfit.columns[i]))
 
-        if st.form_submit_button("Add"):
+    if st.form_submit_button("Add"):
+        if st.session_state.df_dfit.shape[0] == num_new_rows:
+            st.error("Add row limit reached. Cant add any more records..")
+        else:
+            rw = st.session_state.df_dfit.shape[0] + 1
+            st.info(f"Row: {rw} / {num_new_rows} added")
+            st.session_state.df_dfit.loc[rw] = rwdta
+
             if st.session_state.df_dfit.shape[0] == num_new_rows:
-                st.error("Add row limit reached. Cant add any more records..")
-            else:
-                rw = st.session_state.df_dfit.shape[0] + 1
-                st.info(f"Row: {rw} / {num_new_rows} added")
-                st.session_state.df_dfit.loc[rw] = rwdta
-
-                if st.session_state.df_dfit.shape[0] == num_new_rows:
-                    st.error("Add row limit reached...")
+                st.error("Add row limit reached...")
 #     st.button('Clear DFIT Inputs', on_click = clear) 
-    df_dfit = st.session_state.df_dfit    
+df_dfit = st.session_state.df_dfit    
 
 
 
-    options_2 = GridOptionsBuilder.from_dataframe(
-        df_dfit, 
-        editable = True,
-        enableRowGroup = True, 
-        enableValue = True, 
-        enablePivot = True
-        )
+options_2 = GridOptionsBuilder.from_dataframe(
+    df_dfit, 
+    editable = True,
+    enableRowGroup = True, 
+    enableValue = True, 
+    enablePivot = True
+    )
 
-    options_2.configure_side_bar()
-    options_2.configure_selection("single")
+options_2.configure_side_bar()
+options_2.configure_selection("single")
 
-    df_dfit = AgGrid(
-        df_dfit,
-        editable = True,
-        enable_enterprise_modules = True,
-        gridOptions = options_2.build(), 
-        update_mode = GridUpdateMode.MODEL_CHANGED,
-        fit_columns_on_grid_load = False,
-        allow_unsafe_jscode = True)
+df_dfit = AgGrid(
+    df_dfit,
+    editable = True,
+    enable_enterprise_modules = True,
+    gridOptions = options_2.build(), 
+    update_mode = GridUpdateMode.MODEL_CHANGED,
+    fit_columns_on_grid_load = False,
+    allow_unsafe_jscode = True)
 
-    df_dfit = df_dfit['data'] 
+df_dfit = df_dfit['data'] 
 
 
 
-dfit() 
+ 
     ######################################################3
     
 def interactive_plot():
