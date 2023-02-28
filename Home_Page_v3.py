@@ -298,12 +298,8 @@ def interactive_plot():
     #DFIT Data added 02/23/2023
    ######################################################################### 
 
-    def dfit():
-      
-      def clear():
-        st.session_state.df_dfit['Depth (TVD)'], st.session_state.df_dfit['PPG'] = 0,0
-
-            
+    
+    
           # initialize list of lists
       data_dfit = []
       # Create the pandas DataFrame
