@@ -333,7 +333,7 @@ def interactive_plot():
 
                 if st.session_state.df_dfit.shape[0] == num_new_rows:
                     st.error("Add row limit reached...")
-    st.button('Clear DFIT Inputs', on_click = clear) 
+#     st.button('Clear DFIT Inputs', on_click = clear) 
     df_dfit = st.session_state.df_dfit    
 
 
