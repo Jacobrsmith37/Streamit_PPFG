@@ -225,9 +225,9 @@ def dfit():
 
 
 
-    
+dfit() 
     ######################################################3
-       
+    
 def interactive_plot():
     global df_topset
     global df_ovbd
