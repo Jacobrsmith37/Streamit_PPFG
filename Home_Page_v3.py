@@ -295,17 +295,7 @@ def interactive_plot():
         allow_unsafe_jscode = True)
     
     df_lith = df_lith['data'] 
-    
-
-    
-    
-    
-   
-    
-    
-    
-    
-    
+  
     
     
     merge_df = pd.merge(new_df, df_lith, on = ['Lithology'], how = 'inner')
@@ -581,17 +571,17 @@ def interactive_plot():
             elif df_LS['DEPTH'][i] <= Base_Zone_1 + shift:
                  df_LS['LS_PSI'][i] = (LS_Formation_water_Density_1) * (df_LS['DEPTH'][i] - df_LS['DEPTH'][i-1]) +  df_LS['LS_PSI'][i-1]
 
-            elif df_LS['DEPTH'][i] <= Base_Zone_2 + shift:
-                 df_LS['LS_PSI'][i] = (LS_Formation_water_Density_2) * (df_LS['DEPTH'][i] - df_LS['DEPTH'][i-1]) +  df_LS['LS_PSI'][i-1]
+            # elif df_LS['DEPTH'][i] <= Base_Zone_2 + shift:
+            #      df_LS['LS_PSI'][i] = (LS_Formation_water_Density_2) * (df_LS['DEPTH'][i] - df_LS['DEPTH'][i-1]) +  df_LS['LS_PSI'][i-1]
 
-            elif df_LS['DEPTH'][i] <= Base_Zone_3 + shift:
-                 df_LS['LS_PSI'][i] = (LS_Formation_water_Density_3) * (df_LS['DEPTH'][i] - df_LS['DEPTH'][i-1]) +  df_LS['LS_PSI'][i-1]
+            # elif df_LS['DEPTH'][i] <= Base_Zone_3 + shift:
+            #      df_LS['LS_PSI'][i] = (LS_Formation_water_Density_3) * (df_LS['DEPTH'][i] - df_LS['DEPTH'][i-1]) +  df_LS['LS_PSI'][i-1]
 
-            elif df_LS['DEPTH'][i] <= Base_Zone_4 + shift:
-                 df_LS['LS_PSI'][i] = (LS_Formation_water_Density_4) * (df_LS['DEPTH'][i] - df_LS['DEPTH'][i-1]) +  df_LS['LS_PSI'][i-1]
+            # elif df_LS['DEPTH'][i] <= Base_Zone_4 + shift:
+            #      df_LS['LS_PSI'][i] = (LS_Formation_water_Density_4) * (df_LS['DEPTH'][i] - df_LS['DEPTH'][i-1]) +  df_LS['LS_PSI'][i-1]
 
-            else:
-                 df_LS['LS_PSI'][i] = (LS_Formation_water_Density_5) * (df_LS['DEPTH'][i] - df_LS['DEPTH'][i-1]) +  df_LS['LS_PSI'][i-1]              
+            # else:
+            #      df_LS['LS_PSI'][i] = (LS_Formation_water_Density_5) * (df_LS['DEPTH'][i] - df_LS['DEPTH'][i-1]) +  df_LS['LS_PSI'][i-1]              
 
 
         for i in range(len(df_LS)):
