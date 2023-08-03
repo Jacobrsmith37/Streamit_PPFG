@@ -1013,10 +1013,10 @@ def interactive_plot():
     
     
 #     plot.add_hline(y = int(pierre_upload['TVD']), line_dash="dot", row=1, col="all", annotation_text = 'Pierre', annotation_position = 'top left')
-#     plot.add_hline(y = int(greenhorn_upload['TVD']), line_dash="dot", row=1, col="all", annotation_text = 'Greenhorn', annotation_position = 'top left')
+    plot.add_hline(y = int(greenhorn_upload['TVD']), line_dash="dot", row=1, col="all", annotation_text = 'Greenhorn', annotation_position = 'top left')
 #     plot.add_hline(y = int(greenhorn_upload['TVD']) + 200, line_dash="dot", row=1, col="all", annotation_text = 'Greenhorn Silt', annotation_position = 'top left')
 #     plot.add_hline(y = int(mowry_upload['TVD']), line_dash="dot", row=1, col="all", annotation_text = 'Mowry', annotation_position = 'top left')
-#     plot.add_hline(y = int(inyan_kara_upload['TVD']), line_dash="dot", row=1, col="all", annotation_text = 'Inyan Kara', annotation_position = 'top left')
+    plot.add_hline(y = int(inyan_kara_upload['TVD']), line_dash="dash", row=1, col="all", annotation_text = 'Inyan Kara', annotation_position = 'top left')
 #     plot.add_hline(y = int(swift_upload['TVD']), line_dash="dot", row=1, col="all", annotation_text = 'Swift', annotation_position = 'top left')
 #     plot.add_hline(y = int(rierdon_upload['TVD']), line_dash="dot", row=1, col="all", annotation_text = 'Rierdon', annotation_position = 'top left')
 #     plot.add_hline(y = int(amsden_upload['TVD']), line_dash="dot", row=1, col="all", annotation_text = 'Amsden', annotation_position = 'top left')
