@@ -315,26 +315,26 @@ def interactive_plot():
     
     
     
-    st.subheader('Merged Dataframe Ouput (not editable)')
-    st.write('The graph will plot based on this dataframe')
-    options = GridOptionsBuilder.from_dataframe(
-        merge_df, 
-        editable = False,
-        enableRowGroup = True, 
-        enableValue = True, 
-        enablePivot = True
-        )
-    options.configure_side_bar()
-    options.configure_selection("single")
+    # st.subheader('Merged Dataframe Ouput (not editable)')
+    # st.write('The graph will plot based on this dataframe')
+    # options = GridOptionsBuilder.from_dataframe(
+    #     merge_df, 
+    #     editable = False,
+    #     enableRowGroup = True, 
+    #     enableValue = True, 
+    #     enablePivot = True
+    #     )
+    # options.configure_side_bar()
+    # options.configure_selection("single")
     
-    merge_df = AgGrid(merge_df, editable = False, 
-        enable_enterprise_modules = True,
-        gridOptions = options.build(), 
-        update_mode = GridUpdateMode.MODEL_CHANGED,
-        fit_columns_on_grid_load = False,
-        allow_unsafe_jscode = True)
+    # merge_df = AgGrid(merge_df, editable = False, 
+    #     enable_enterprise_modules = True,
+    #     gridOptions = options.build(), 
+    #     update_mode = GridUpdateMode.MODEL_CHANGED,
+    #     fit_columns_on_grid_load = False,
+    #     allow_unsafe_jscode = True)
 
-    merge_df = merge_df['data'] 
+    # merge_df = merge_df['data'] 
 
     
     
@@ -1047,9 +1047,9 @@ def interactive_plot():
 
     
     
-def data_summary():
-    st.header('Statistics of Dataframe')
-    st.write(df_ovbd.describe())
+# def data_summary():
+#     st.header('Statistics of Dataframe')
+#     st.write(df_ovbd.describe())
 
 
 
@@ -1075,4 +1075,4 @@ else:
     
 interactive_plot()
 
-data_summary()
+#data_summary()
