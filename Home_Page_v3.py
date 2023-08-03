@@ -1005,7 +1005,7 @@ def interactive_plot():
             
 
                     plot.add_hline(y = row[1]['TVD'],
-                                   line_dash = 'dot',
+                                   line_dash = 'dash',
                                    annotation_text = row[1]['TopName'],
                                   annotation_position = 'top left') 
     Topnames()
