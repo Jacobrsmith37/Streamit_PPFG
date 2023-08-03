@@ -571,8 +571,8 @@ def interactive_plot():
             elif df_LS['DEPTH'][i] <= Base_Zone_1 + shift:
                  df_LS['LS_PSI'][i] = (LS_Formation_water_Density_1) * (df_LS['DEPTH'][i] - df_LS['DEPTH'][i-1]) +  df_LS['LS_PSI'][i-1]
 
-            # elif df_LS['DEPTH'][i] <= Base_Zone_2 + shift:
-            #      df_LS['LS_PSI'][i] = (LS_Formation_water_Density_2) * (df_LS['DEPTH'][i] - df_LS['DEPTH'][i-1]) +  df_LS['LS_PSI'][i-1]
+            elif df_LS['DEPTH'][i] <= Base_Zone_2 + shift:
+                 df_LS['LS_PSI'][i] = (LS_Formation_water_Density_2) * (df_LS['DEPTH'][i] - df_LS['DEPTH'][i-1]) +  df_LS['LS_PSI'][i-1]
 
             # elif df_LS['DEPTH'][i] <= Base_Zone_3 + shift:
             #      df_LS['LS_PSI'][i] = (LS_Formation_water_Density_3) * (df_LS['DEPTH'][i] - df_LS['DEPTH'][i-1]) +  df_LS['LS_PSI'][i-1]
@@ -682,8 +682,8 @@ def interactive_plot():
             elif df_ML['DEPTH'][i] <= Base_Zone_1 + shift:
                  df_ML['ML_PSI'][i] = (ML_Formation_water_Density_1) * (df_ML['DEPTH'][i] - df_ML['DEPTH'][i-1]) +  df_ML['ML_PSI'][i-1]
 
-            # elif df_ML['DEPTH'][i] <= Base_Zone_2 + shift:
-            #      df_ML['ML_PSI'][i] = (ML_Formation_water_Density_2) * (df_ML['DEPTH'][i] - df_ML['DEPTH'][i-1]) +  df_ML['ML_PSI'][i-1]
+            elif df_ML['DEPTH'][i] <= Base_Zone_2 + shift:
+                 df_ML['ML_PSI'][i] = (ML_Formation_water_Density_2) * (df_ML['DEPTH'][i] - df_ML['DEPTH'][i-1]) +  df_ML['ML_PSI'][i-1]
 
             # elif df_ML['DEPTH'][i] <= Base_Zone_3 + shift:
             #      df_ML['ML_PSI'][i] = (ML_Formation_water_Density_3) * (df_ML['DEPTH'][i] - df_ML['DEPTH'][i-1]) +  df_ML['ML_PSI'][i-1]
@@ -795,8 +795,8 @@ def interactive_plot():
             elif df_HS['DEPTH'][i] <= Base_Zone_1 + shift:
                  df_HS['HS_PSI'][i] = (HS_Formation_water_Density_1) * (df_HS['DEPTH'][i] - df_HS['DEPTH'][i-1]) +  df_HS['HS_PSI'][i-1]
 
-            # elif df_HS['DEPTH'][i] <= Base_Zone_2 + shift:
-            #      df_HS['HS_PSI'][i] = (HS_Formation_water_Density_2) * (df_HS['DEPTH'][i] - df_HS['DEPTH'][i-1]) +  df_HS['HS_PSI'][i-1]
+            elif df_HS['DEPTH'][i] <= Base_Zone_2 + shift:
+                 df_HS['HS_PSI'][i] = (HS_Formation_water_Density_2) * (df_HS['DEPTH'][i] - df_HS['DEPTH'][i-1]) +  df_HS['HS_PSI'][i-1]
 
             # elif df_HS['DEPTH'][i] <= Base_Zone_3 + shift:
             #      df_HS['HS_PSI'][i] = (HS_Formation_water_Density_3) * (df_HS['DEPTH'][i] - df_HS['DEPTH'][i-1]) +  df_HS['HS_PSI'][i-1]
