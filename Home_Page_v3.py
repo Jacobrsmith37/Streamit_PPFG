@@ -435,8 +435,8 @@ def interactive_plot():
         if 'Base Zone 1' not in st.session_state:
             Base_Zone_1 = st.number_input('Base Zone 1', value = 14000)
           
-        # if 'Base Zone 2' not in st.session_state:
-        #     Base_Zone_2 = st.number_input('Base Zone 2', value = 14000)
+        if 'Base Zone 2' not in st.session_state:
+            Base_Zone_2 = st.number_input('Base Zone 2', value = 14000)
             
         # if 'Base Zone 3' not in st.session_state:
         #     Base_Zone_3 = st.number_input('Base Zone 3', value = 15000)
@@ -455,8 +455,8 @@ def interactive_plot():
             LS_Sea_Water_Density = st.number_input('Low Side Sea Water Density', step = 1e-2, value = .45)  
         if 'Low Side Formation Water Density 1' not in st.session_state:
             LS_Formation_water_Density_1 = st.number_input('Low Side Formation Water Density 1', step = 1e-2, value = .45)
-        # if 'Low Side Formation Water Density 2' not in st.session_state:
-        #     LS_Formation_water_Density_2 = st.number_input('Low Side Formation Water Density 2', step = 1e-2, value = .45)  
+        if 'Low Side Formation Water Density 2' not in st.session_state:
+            LS_Formation_water_Density_2 = st.number_input('Low Side Formation Water Density 2', step = 1e-2, value = .45)  
         # if 'Low Side Formation Water Density 3' not in st.session_state:
         #     LS_Formation_water_Density_3 = st.number_input('Low Side Formation Water Density 3', step = 1e-2, value = .52)  
         # if 'Low Side Formation Water Density 4' not in st.session_state:
@@ -470,8 +470,8 @@ def interactive_plot():
             ML_Sea_Water_Density = st.number_input('Most Likely Sea Water Density', step = 1e-2, value = .47)  
         if 'Most Likely Formation Water Density 1' not in st.session_state:
             ML_Formation_water_Density_1 = st.number_input('Most Likely Formation Water Density 1', step = 1e-2, value = .47)
-        # if 'Most Likely Formation Water Density 2' not in st.session_state:
-        #     ML_Formation_water_Density_2 = st.number_input('Most Likely Formation Water Density 2', step = 1e-2, value = .47)  
+        if 'Most Likely Formation Water Density 2' not in st.session_state:
+             ML_Formation_water_Density_2 = st.number_input('Most Likely Formation Water Density 2', step = 1e-2, value = .47)  
         # if 'Most Likely Formation Water Density 3' not in st.session_state:
         #     ML_Formation_water_Density_3 = st.number_input('Most Likely Formation Water Density 3', step = 1e-2, value = .52)  
         # if 'Most Likely Formation Water Density 4' not in st.session_state:
@@ -485,8 +485,8 @@ def interactive_plot():
             HS_Sea_Water_Density = st.number_input('High Side Sea Water Density', step = 1e-2, value = .49)  
         if 'High Side Formation Water Density 1' not in st.session_state:
             HS_Formation_water_Density_1 = st.number_input('High Side Formation Water Density 1', step = 1e-2, value = .49)
-        # if 'High Side Formation Water Density 2' not in st.session_state:
-        #     HS_Formation_water_Density_2 = st.number_input('High Side Formation Water Density 2', step = 1e-2, value = .49)  
+        if 'High Side Formation Water Density 2' not in st.session_state:
+            HS_Formation_water_Density_2 = st.number_input('High Side Formation Water Density 2', step = 1e-2, value = .49)  
         # if 'High Side Formation Water Density 3' not in st.session_state:
         #     HS_Formation_water_Density_3 = st.number_input('High Side Formation Water Density 3', step = 1e-2, value = .52)  
         # if 'High Side Formation Water Density 4' not in st.session_state:
