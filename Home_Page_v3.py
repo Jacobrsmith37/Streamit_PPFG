@@ -509,7 +509,7 @@ def interactive_plot():
         if 'Low Side Frobisher-Alida' not in st.session_state:
             LS_frobisher_alida = st.number_input('Low Side Frobisher-Alida', value = 0)  
         if 'Low Side Upper Bakken' not in st.session_state:
-            LS_upper_bakken = st.number_input('Low Side Upper Bakken', value = 8400) 
+            LS_upper_bakken = st.number_input('Low Side Upper Bakken', value = 7000) 
         #added 02/23/2023
         if 'Low Side Three Forks 1' not in st.session_state:
             LS_three_forks_1 = st.number_input('Low Side Three Forks 1', value = 0) 
@@ -532,7 +532,7 @@ def interactive_plot():
         if 'Most Likely Frobisher-Alida' not in st.session_state:
             ML_frobisher_alida = st.number_input('Most Likely Frobisher-Alida', value = 0)  
         if 'Most Likely Upper Bakken' not in st.session_state:
-            ML_upper_bakken = st.number_input('Most Likely Upper Bakken', value = 8850)  
+            ML_upper_bakken = st.number_input('Most Likely Upper Bakken', value = 8000)  
             
         if 'Most Likely Three Forks 1' not in st.session_state:
             ML_three_forks_1 = st.number_input('Most Likely Three Forks 1', value = 0)  
@@ -553,7 +553,7 @@ def interactive_plot():
         if 'High Side Frobisher-Alida' not in st.session_state:
             HS_frobisher_alida = st.number_input('High Side Frobisher-Alida', value = 0)  
         if 'High Side Upper Bakken' not in st.session_state:
-            HS_upper_bakken = st.number_input('High Side Upper Bakken', value = 9200)  
+            HS_upper_bakken = st.number_input('High Side Upper Bakken', value = 9000)  
         if 'High Side Three Forks 1' not in st.session_state:
             HS_three_forks_1 = st.number_input('High Side Three Forks 1', value = 0)  
             
