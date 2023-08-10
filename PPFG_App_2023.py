@@ -1000,11 +1000,11 @@ def interactive_plot():
     plot.update_layout(
         margin=dict(l=80, r=80, t=70, b=20),
         paper_bgcolor="#CDFFCC",)
-  plot.update_layout(
-    legend=dict(
+    plot.update_layout(
+        legend=dict(
         x=0,
         y=.8),
-    font=dict(
+        font=dict(
             size=12,))
   #Hess dark green is #037F57
   #Hess light green is #CDFFCC
