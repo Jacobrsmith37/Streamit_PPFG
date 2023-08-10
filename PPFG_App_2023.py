@@ -992,9 +992,7 @@ def interactive_plot():
                        xaxis_title="PPG",
                        yaxis_title="TVD",
                        height = 900,
-                       width = 800,
-                       template='plotly',
-                       margin=dict(l=40, r=40, t=50, b=20),
+                       width = 900,
                        yaxis=dict(automargin=True)
                       )
     def Topnames():
