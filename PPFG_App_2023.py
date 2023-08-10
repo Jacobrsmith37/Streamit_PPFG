@@ -995,7 +995,7 @@ def interactive_plot():
         dict(
             source = image_logo,
             xref = "paper", yref="paper",
-            x= -.1, y=1.07,
+            x= -.1, y=1.12,
             sizex=0.2, sizey=0.2,
             xanchor="left", yanchor="top"
         )
