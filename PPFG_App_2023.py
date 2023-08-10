@@ -991,10 +991,17 @@ def interactive_plot():
                        title_x = .5, 
                        xaxis_title="PPG",
                        yaxis_title="TVD",
-                       height = 900,
-                       width = 900,
-                       yaxis=dict(automargin=True)
+                       height = 1000,
+                       width = 900
                       )
+  
+    plot.update_layout(
+        margin=dict(l=20, r=20, t=20, b=20),
+        paper_bgcolor="LightSteelBlue",)
+    plot.update_layout(width=int(width)
+
+
+                      
     def Topnames():
             for row in merge_df.iterrows():
                 if row[1]['Plot?'] is not '':
@@ -1029,15 +1036,11 @@ def interactive_plot():
     st.plotly_chart(plot, use_container_width=True)
 
     convert_df(df_ovbd)
-
-
-    
+  
     
 # def data_summary():
 #     st.header('Statistics of Dataframe')
 #     st.write(df_ovbd.describe())
-
-
 
 home()
 if options == 'Yes':
