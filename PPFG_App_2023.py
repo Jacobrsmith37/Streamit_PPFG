@@ -1017,12 +1017,14 @@ def interactive_plot():
             size=8),
           bgcolor = 'white',
           bordercolor="Black",
+          borderpad=4,
           borderwidth=1))
 
   
     plot.update_layout(
         margin=dict(l=80, r=80, t=100, b=20),
-        paper_bgcolor="#CDFFCC",)
+        paper_bgcolor="#CDFFCC",
+    borderpad = 4)
 
   #Hess dark green is #037F57
   #Hess light green is #CDFFCC
