@@ -984,8 +984,8 @@ def interactive_plot():
     plot.add_trace(go.Scatter(x = df_dfit['PPG'], y = df_dfit['Depth (TVD)'], name = 'Known Data Point', mode='markers', marker_color ="#000000"))
     
     
-    plot.update_yaxes(nticks = 30, showgrid=True, gridcolor = 'lightgray', range = [max(new_df['TVD']) + 500, 0]) #, autorange = 'reversed')
-    plot.update_xaxes(nticks = 40, showgrid=True, gridcolor = 'lightgray')
+    plot.update_yaxes(nticks = 30, showgrid=True, gridcolor = 'lightgray',mirror=True, ticks='outside',showline=True, range = [max(new_df['TVD']) + 500, 0]) #, autorange = 'reversed')
+    plot.update_xaxes(nticks = 40, showgrid=True, gridcolor = 'lightgray',mirror=True, ticks='outside', showline=True)
     
     title_input = st.sidebar.text_input('Enter Well Name' ,'Well Name')
     plot.update_layout(title_text = (title_input  + '<br>Pore Pressure Log Plot'), 
@@ -993,7 +993,7 @@ def interactive_plot():
                        xaxis_title="PPG",
                        yaxis_title="TVD",
                        height = 1000,
-                       width = 900,
+                       width = 1000,
                        plot_bgcolor='white'
                       )
     plot.update_layout(
