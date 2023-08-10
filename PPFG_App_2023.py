@@ -998,7 +998,7 @@ def interactive_plot():
     plot.update_layout(
         margin=dict(l=20, r=20, t=20, b=20),
         paper_bgcolor="LightSteelBlue",)
-    plot.update_layout(width=int(width))
+
 
 
                       
