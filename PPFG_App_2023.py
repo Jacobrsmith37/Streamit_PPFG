@@ -1044,7 +1044,7 @@ def interactive_plot():
     
     
 #     plot.add_hline(y = int(pierre_upload['TVD']), line_dash="dot", row=1, col="all", annotation_text = 'Pierre', annotation_position = 'top left')
-    plot.add_hline(y = int(greenhorn_upload['TVD']), line_dash="dot", row=1, col="all", annotation_text = 'GREENHORN', annotation_xshift = 10,font=dict(size=16), annotation_position = 'top left')
+    plot.add_hline(y = int(greenhorn_upload['TVD']), line_dash="dot", row=1, col="all", annotation_text = 'GREENHORN', annotation_xshift = 10, annotation_position = 'top left')
 #     plot.add_hline(y = int(greenhorn_upload['TVD']) + 200, line_dash="dot", row=1, col="all", annotation_text = 'Greenhorn Silt', annotation_position = 'top left')
 #     plot.add_hline(y = int(mowry_upload['TVD']), line_dash="dot", row=1, col="all", annotation_text = 'Mowry', annotation_position = 'top left')
     plot.add_hline(y = int(inyan_kara_upload['TVD']), line_dash="dot", row=1, col="all", annotation_text = 'INYAN_KARA',annotation_xshift = 10, annotation_position = 'top left')
