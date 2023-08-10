@@ -43,7 +43,7 @@ las = lasio.read("OVBD_PSI.las")
 
 # Add a title and intro text
 st.title('PPFG Data Explorer')
-st.write('Website coded by Jacob Smith 2022')
+st.write('Website coded by Jacob Smith 2023')
 st.text('This is a web app to allow exploration of PPFG Data')
 
 # Sidebar setup
@@ -156,11 +156,6 @@ def troubleshooting():
     st.write('- If you change a pressure on the bottom containers and get an error, check that your Topset names are spelled correctly and are present. These will match the standard Petrel nomenclature eg LOWER_BAKKEN_SHALE and INYAN_KARA')
     st.write('- If you want to differentiate Inyan Kara into 2 lobes with different pressures, ensure you add a top called "Inyan_Kara_2" and a TVD before you drag and drop your topset')
     
-    
-    
-
-
-
  
     ######################################################3
     
@@ -993,12 +988,13 @@ def interactive_plot():
     
     title_input = st.sidebar.text_input('Enter Well Name' ,'Well Name')
     plot.update_layout(title_text = (title_input  + '<br>Pore Pressure Log Plot'), 
-                       title_x = .3, 
+                       title_x = .5, 
                        xaxis_title="PPG",
                        yaxis_title="TVD",
-                       height = 1200,
+                       height = 900,
                        width = 800,
-                       template='plotly')
+                       template='plotly',
+                       margin=dict(l=20, r=20, t=20, b=20))
     def Topnames():
             for row in merge_df.iterrows():
                 if row[1]['Plot?'] is not '':
