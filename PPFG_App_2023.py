@@ -1047,7 +1047,7 @@ def interactive_plot():
     plot.add_hline(y = int(greenhorn_upload['TVD']), line_dash="dot", row=1, col="all", annotation_text = 'GREENHORN', annotation_xshift = '4', annotation_position = 'top left')
 #     plot.add_hline(y = int(greenhorn_upload['TVD']) + 200, line_dash="dot", row=1, col="all", annotation_text = 'Greenhorn Silt', annotation_position = 'top left')
 #     plot.add_hline(y = int(mowry_upload['TVD']), line_dash="dot", row=1, col="all", annotation_text = 'Mowry', annotation_position = 'top left')
-    plot.add_hline(y = int(inyan_kara_upload['TVD']), line_dash="dot", row=1, col="all", annotation_text = 'INYAN_KARA',annotation_xshift = 4, annotation_position = 'top left')
+    plot.add_hline(y = int(inyan_kara_upload['TVD']), line_dash="dot", row=1, col="all", annotation_text = 'INYAN_KARA',annotation_xshift = 8, annotation_position = 'top left')
     plot.add_hline(y = int(spearfish_upload['TVD']), line_dash="dot", row=1, col="all", annotation_text = 'SPEARFISH',annotation_xshift = 4, annotation_position = 'top left')
     plot.add_hline(y = int(swift_upload['TVD']), line_dash="dot", row=1, col="all", annotation_text = 'SWIFT', annotation_xshift = 4,annotation_position = 'top left')
     plot.add_hline(y = int(rierdon_upload['TVD']), line_dash="dot", row=1, col="all", annotation_text = 'RIERDON', annotation_xshift = 4,annotation_position = 'top left')
