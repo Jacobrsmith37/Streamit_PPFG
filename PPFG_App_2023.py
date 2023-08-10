@@ -1001,7 +1001,12 @@ def interactive_plot():
         x=.05,
         y=.9),
         font=dict(
-            size=9,))
+            size=8,),
+        bgcolor = 'white',
+        bordercolor="Black",
+        borderwidth=1)
+
+  
     plot.update_layout(
         margin=dict(l=80, r=80, t=70, b=20),
         paper_bgcolor="#CDFFCC",)
