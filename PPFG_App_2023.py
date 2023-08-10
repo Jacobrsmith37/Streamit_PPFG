@@ -1062,6 +1062,9 @@ def interactive_plot():
 #  #   plot.add_hline(y = int(lower_bakken_upload['TVD']), line_dash="dot", row=1, col="all", annotation_text = 'Lower Bakken Shale', annotation_position = 'top left')
 #     plot.add_hline(y = int(birdbear_upload['TVD']), line_dash="dot", row=1, col="all", annotation_text = 'Birdbear', annotation_position = 'top left')
 
+    plot.update_annotations(font=dict(size=18, color="red"))
+
+  
     st.plotly_chart(plot, use_container_width=True)
 
     convert_df(df_ovbd)
