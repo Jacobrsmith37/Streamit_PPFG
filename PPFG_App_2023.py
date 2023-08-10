@@ -994,7 +994,8 @@ def interactive_plot():
                        yaxis_title="TVD",
                        height = 1000,
                        width = 1000,
-                       plot_bgcolor='white'
+                       plot_bgcolor='white',
+                       bordercolor="Black"
                       )
     plot.update_layout(
         legend=dict(
