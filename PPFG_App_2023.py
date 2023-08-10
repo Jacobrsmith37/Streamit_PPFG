@@ -994,7 +994,7 @@ def interactive_plot():
                        height = 900,
                        width = 800,
                        template='plotly',
-                       margin=dict(l=20, r=20, t=20, b=20))
+                       margin=dict(l=20, r=40, t=50, b=20))
     def Topnames():
             for row in merge_df.iterrows():
                 if row[1]['Plot?'] is not '':
