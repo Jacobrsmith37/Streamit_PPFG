@@ -1018,7 +1018,7 @@ def interactive_plot():
           bgcolor = 'white',
           bordercolor="Black",
           borderwidth=2),
-          borderpad = 4)
+          borderpad = 40)
 
   
     plot.update_layout(
