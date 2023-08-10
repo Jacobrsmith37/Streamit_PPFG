@@ -997,7 +997,7 @@ def interactive_plot():
             xref = "paper", yref="paper",
             x=0, y=1.05,
             sizex=0.2, sizey=0.2,
-            xanchor="right", yanchor="bottom"
+            xanchor="left", yanchor="top"
         )
     )
   
