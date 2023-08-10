@@ -996,8 +996,10 @@ def interactive_plot():
                       )
   
     plot.update_layout(
-        margin=dict(l=60, r=20, t=50, b=20),
-        paper_bgcolor="#037F57",)
+        margin=dict(l=70, r=80, t=70, b=20),
+        paper_bgcolor="#CDFFCC",)
+  #Hess dark green is #037F57
+  #Hess light green is #CDFFCC
 
 
 
