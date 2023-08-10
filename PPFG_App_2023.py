@@ -998,13 +998,13 @@ def interactive_plot():
                       )
     plot.update_layout(
         legend=dict(
-        x=.05,
-        y=.9),
-        font=dict(
-            size=8,
-        bgcolor = 'white',
-        bordercolor="Black",
-        borderwidth=1))
+          x=.05,
+          y=.9,
+          font=dict(
+            size=8),
+          bgcolor = 'white',
+          bordercolor="Black",
+          borderwidth=1))
 
   
     plot.update_layout(
