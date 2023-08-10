@@ -923,6 +923,7 @@ def interactive_plot():
     inyan_kara_upload_2 = new_df[new_df['TopName'] == 'INYAN_KARA_2']
     swift_upload = new_df[new_df['TopName'] == 'SWIFT']
     rierdon_upload = new_df[new_df['TopName'] == 'RIERDON']
+    spearfish_upload = new_df[new_df['TopName'] == 'SPEARFISH']
     amsden_upload = new_df[new_df['TopName'] == 'AMSDEN']
     tyler_upload = new_df[new_df['TopName'] == 'TYLER']
     kibbey_lime_upload = new_df[new_df['TopName'] == 'KIBBEY_LIME']
@@ -992,11 +993,13 @@ def interactive_plot():
                        xaxis_title="PPG",
                        yaxis_title="TVD",
                        height = 1000,
-                       width = 900
+                       width = 900,
+                       plot_bgcolor='white'
                       )
   
     plot.update_layout(
         margin=dict(l=70, r=80, t=70, b=20),
+        pad = 4,
         paper_bgcolor="#CDFFCC",)
   #Hess dark green is #037F57
   #Hess light green is #CDFFCC
@@ -1010,7 +1013,7 @@ def interactive_plot():
             
 
                     plot.add_hline(y = row[1]['TVD'],
-                                   line_dash = 'dash',
+                                   line_dash = 'dot',
                                    annotation_text = row[1]['TopName'],
                                   annotation_position = 'top left') 
     Topnames()
@@ -1022,6 +1025,7 @@ def interactive_plot():
 #     plot.add_hline(y = int(greenhorn_upload['TVD']) + 200, line_dash="dot", row=1, col="all", annotation_text = 'Greenhorn Silt', annotation_position = 'top left')
 #     plot.add_hline(y = int(mowry_upload['TVD']), line_dash="dot", row=1, col="all", annotation_text = 'Mowry', annotation_position = 'top left')
     plot.add_hline(y = int(inyan_kara_upload['TVD']), line_dash="dot", row=1, col="all", annotation_text = 'INYAN_KARA', annotation_position = 'top left')
+    plot.add_hline(y = int(spearfish_upload['TVD']), line_dash="dot", row=1, col="all", annotation_text = 'SPEARFISH', annotation_position = 'top left')
     plot.add_hline(y = int(swift_upload['TVD']), line_dash="dot", row=1, col="all", annotation_text = 'SWIFT', annotation_position = 'top left')
     plot.add_hline(y = int(rierdon_upload['TVD']), line_dash="dot", row=1, col="all", annotation_text = 'RIERDON', annotation_position = 'top left')
     plot.add_hline(y = int(amsden_upload['TVD']), line_dash="dot", row=1, col="all", annotation_text = 'AMSDEN', annotation_position = 'top left')
