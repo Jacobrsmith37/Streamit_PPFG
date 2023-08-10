@@ -995,7 +995,7 @@ def interactive_plot():
         dict(
             source = image_logo,
             xref = "paper", yref="paper",
-            x= -.05, y=1.07,
+            x= -.1, y=1.07,
             sizex=0.2, sizey=0.2,
             xanchor="left", yanchor="top"
         )
@@ -1021,7 +1021,7 @@ def interactive_plot():
 
   
     plot.update_layout(
-        margin=dict(l=80, r=80, t=70, b=20),
+        margin=dict(l=80, r=80, t=100, b=20),
         paper_bgcolor="#CDFFCC",)
 
   #Hess dark green is #037F57
