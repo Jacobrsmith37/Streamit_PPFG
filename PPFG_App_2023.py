@@ -984,12 +984,24 @@ def interactive_plot():
     plot.add_trace(go.Scatter(x = df_dfit['PPG'], y = df_dfit['Depth (TVD)'], name = 'Known Data Point', mode='markers', marker_color ="#000000"))
     
     
-    plot.update_yaxes(nticks = 30, showgrid=True, gridcolor = 'lightgray',mirror=True, ticks='outside',showline=True, linewidth = 1.5, linecolor = 'black', 
+    plot.update_yaxes(nticks = 30, showgrid=True, gridcolor = 'lightgray',mirror=True, ticks='outside',showline=True, linewidth = 1.1, linecolor = 'black', 
                       range = [max(new_df['TVD']) + 500, 0]) #, autorange = 'reversed')
-    plot.update_xaxes(nticks = 40, showgrid=True, gridcolor = 'lightgray',mirror=True, ticks='outside', showline=True)
+    plot.update_xaxes(nticks = 40, showgrid=True, gridcolor = 'lightgray',mirror=True, ticks='outside', showline=True, linewidth = 1.1, linecolor = 'black')
     
     title_input = st.sidebar.text_input('Enter Well Name' ,'Well Name')
-    plot.update_layout(title_text = (title_input  + '<br>Pore Pressure Log Plot'), 
+
+    # Add image
+    fig.add_layout_image(
+        dict(
+            source = image_logo,
+            xref = "paper", yref="paper",
+            x=1, y=1.05,
+            sizex=0.2, sizey=0.2,
+            xanchor="right", yanchor="bottom"
+        )
+    )
+  
+plot.update_layout(title_text = (title_input  + '<br>Pore Pressure Log Plot'), 
                        title_x = .5, 
                        xaxis_title="PPG",
                        yaxis_title="TVD",
