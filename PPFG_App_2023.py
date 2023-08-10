@@ -984,7 +984,7 @@ def interactive_plot():
     plot.add_trace(go.Scatter(x = df_dfit['PPG'], y = df_dfit['Depth (TVD)'], name = 'Known Data Point', mode='markers', marker_color ="#000000"))
     
     
-    plot.update_yaxes(nticks = 30, range = [max(new_df['TVD']) + 500, 0]) #, autorange = 'reversed')
+    plot.update_yaxes(nticks = 30, showgrid=True, gridcolor = 'lightgray', range = [max(new_df['TVD']) + 500, 0]) #, autorange = 'reversed')
     plot.update_xaxes(nticks = 40, showgrid=True, gridcolor = 'lightgray')
     
     title_input = st.sidebar.text_input('Enter Well Name' ,'Well Name')
@@ -998,8 +998,7 @@ def interactive_plot():
                       )
   
     plot.update_layout(
-        margin=dict(l=70, r=80, t=70, b=20),
-        pad = 4,
+        margin=dict(l=80, r=80, t=70, b=20),
         paper_bgcolor="#CDFFCC",)
   #Hess dark green is #037F57
   #Hess light green is #CDFFCC
