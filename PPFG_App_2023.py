@@ -991,11 +991,11 @@ def interactive_plot():
     title_input = st.sidebar.text_input('Enter Well Name' ,'Well Name')
 
     # Add image
-    fig.add_layout_image(
+    plot.add_layout_image(
         dict(
             source = image_logo,
             xref = "paper", yref="paper",
-            x=1, y=1.05,
+            x=0, y=1.05,
             sizex=0.2, sizey=0.2,
             xanchor="right", yanchor="bottom"
         )
