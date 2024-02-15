@@ -960,8 +960,8 @@ def interactive_plot():
   #add in for pore pressure 02/2024
 
     df_ovbd['LS_PP_PSI'] = df_LS['LS_PSI']
-    df_ovbd['ML_PP_PSI'] = df_LS['ML_PSI']
-    df_ovbd['HS_PP_PSI'] = df_LS['HS_PSI']
+    df_ovbd['ML_PP_PSI'] = df_ML['ML_PSI']
+    df_ovbd['HS_PP_PSI'] = df_HS['HS_PSI']
   
     df_ovbd['LS_PP_PPG'] =  df_LS['LS_PPG']
     df_ovbd['ML_PP_PPG'] =  df_ML['ML_PPG']
