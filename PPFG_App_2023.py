@@ -954,14 +954,30 @@ def interactive_plot():
     df_HS['HS_PPG'] = df_HS['HS_PSI'] / df_HS['DEPTH'] / .052
     
 # Create a column for Frac Gradient PSI and then create a column for Frac Gradient PPG with simple conversion
-    df_ovbd['LS_FG_PSI'] = (df_ovbd['Ko']) * (df_ovbd['OVBD_PSI'] - df_LS['LS_PSI']) + df_LS['LS_PSI'] + df_ovbd['Ts']
-    df_ovbd['LS_FG_PPG'] = df_ovbd['LS_FG_PSI'] / df_ovbd['DEPTH'] / 0.052
-    df_ovbd['ML_FG_PSI'] = (df_ovbd['Ko']) * (df_ovbd['OVBD_PSI'] - df_ML['ML_PSI']) + df_ML['ML_PSI'] + df_ovbd['Ts']
-    df_ovbd['ML_FG_PPG'] = df_ovbd['ML_FG_PSI'] / df_ovbd['DEPTH'] / 0.052 
-    df_ovbd['HS_FG_PSI'] = (df_ovbd['Ko']) * (df_ovbd['OVBD_PSI'] - df_HS['HS_PSI']) + df_HS['HS_PSI'] + df_ovbd['Ts']
-    df_ovbd['HS_FG_PPG'] = df_ovbd['HS_FG_PSI'] / df_ovbd['DEPTH'] / 0.052   
-
     
+  
+
+  #add in for pore pressure 02/2024
+
+    df_ovbd['LS_PP_PSI'] = df_LS['LS_PSI']
+    df_ovbd['ML_PP_PSI'] = df_LS['ML_PSI']
+    df_ovbd['HS_PP_PSI'] = df_LS['HS_PSI']
+  
+    df_ovbd['LS_PP_PPG'] =  df_LS['LS_PPG']
+    df_ovbd['ML_PP_PPG'] =  df_ML['ML_PPG']
+    df_ovbd['HS_PP_PPG'] =  df_HS['HS_PPG']
+
+
+    df_ovbd['LS_FG_PSI'] = (df_ovbd['Ko']) * (df_ovbd['OVBD_PSI'] - df_LS['LS_PSI']) + df_LS['LS_PSI'] + df_ovbd['Ts']
+    df_ovbd['ML_FG_PSI'] = (df_ovbd['Ko']) * (df_ovbd['OVBD_PSI'] - df_ML['ML_PSI']) + df_ML['ML_PSI'] + df_ovbd['Ts']    
+    df_ovbd['HS_FG_PSI'] = (df_ovbd['Ko']) * (df_ovbd['OVBD_PSI'] - df_HS['HS_PSI']) + df_HS['HS_PSI'] + df_ovbd['Ts']
+   
+
+    df_ovbd['LS_FG_PPG'] = df_ovbd['LS_FG_PSI'] / df_ovbd['DEPTH'] / 0.052
+    df_ovbd['ML_FG_PPG'] = df_ovbd['ML_FG_PSI'] / df_ovbd['DEPTH'] / 0.052
+    df_ovbd['HS_FG_PPG'] = df_ovbd['HS_FG_PSI'] / df_ovbd['DEPTH'] / 0.052 
+
+
     def convert_df(df_ovbd):
         # IMPORTANT: Cache the conversion to prevent computation on every rerun
         return df_ovbd.to_csv().encode('utf-8')
