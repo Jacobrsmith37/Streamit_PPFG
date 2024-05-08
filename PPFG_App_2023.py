@@ -205,8 +205,7 @@ def interactive_plot():
                        allow_unsafe_jscode = True)
     #df_topset = AgGrid(df_topset, editable = True)
     new_df = df_topset['data']   
-    #added 5/8/2024 since editable topset was not showing
-    new_df
+    
    
     
     def convert_df(new_df):
