@@ -1014,7 +1014,7 @@ def interactive_plot():
     name_input = st.sidebar.text_input('Enter Analyst Name' ,'')
     current_date = datetime.today().strftime('%m-%d-%Y')
     
-    plot.text_input("Date", value = current_date)
+    st.write("Date", current_date)
   
     # Add image
     plot.add_layout_image(
