@@ -1011,6 +1011,8 @@ def interactive_plot():
 
     name_input = st.sidebar.text_input('Enter Analyst Name' ,'')
 
+    date = st.date_input(value = "today")
+
     # Add image
     plot.add_layout_image(
         dict(
@@ -1040,11 +1042,12 @@ def interactive_plot():
           bgcolor = 'white',
           bordercolor="Black",
           borderwidth=2))
+  
+    
 
     plot.update_layout(text_input = ('Analyst: ' + name_input ), 
                        title_x = .9,
-                       title_y = 1,
-                       title_xanchor = 'center')
+                       title_y = 1)
   
 
 
