@@ -1048,7 +1048,7 @@ def interactive_plot():
   
     
 
-    plot.update_layout(annotations =[dict(
+    plot.update_layout([dict(
                                       x = .8,
                                       y = -.1,
                                       xref = 'paper',
