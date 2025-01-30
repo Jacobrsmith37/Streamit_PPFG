@@ -1054,7 +1054,7 @@ def interactive_plot():
                                       xref = 'paper',
                                       yref = 'paper',
                                       showarrow = False,
-                                      text = ('Analyst: ' + name_input ))])
+                                      text = ('Analyst: ' + name_input + '<br>Date: '+ current_date))])
 
   #text2 = ('Date' + current_date)
   
