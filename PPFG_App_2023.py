@@ -1007,12 +1007,13 @@ def interactive_plot():
     plot.update_yaxes(nticks = 30, showgrid=True, gridcolor = 'lightgray',mirror=True, ticks='outside',showline=True, linewidth = 1.1, linecolor = 'black', 
                       range = [max(new_df['TVD']) + 500, 0]) #, autorange = 'reversed')
     plot.update_xaxes(nticks = 40, showgrid=True, gridcolor = 'lightgray',mirror=True, ticks='outside', showline=True, linewidth = 1.1, linecolor = 'black')
-    
+
+  
     title_input = st.sidebar.text_input('Enter Well Name' ,'Well Name')
 
     name_input = st.sidebar.text_input('Enter Analyst Name' ,'')
-    today = datetime.datetime.now()
-    date = st.date_input("Date: ", today, format = "MM.DD.YYY")
+    current_date = datetime.today().strftime('%Y-%m-%d')
+    text_box = st.text_input('Date: ' , value = current_date)
 
     # Add image
     plot.add_layout_image(
@@ -1047,8 +1048,8 @@ def interactive_plot():
     
 
     #plot.update_layout(text_input = ('Analyst: ' + name_input ), 
-                       title_x = .9,
-                       title_y = 1)
+                       #title_x = .9,
+                      # title_y = 1)
   
 
 
