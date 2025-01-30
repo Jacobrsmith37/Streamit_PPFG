@@ -1009,6 +1009,8 @@ def interactive_plot():
     
     title_input = st.sidebar.text_input('Enter Well Name' ,'Well Name')
 
+    name_input = st.sidebar.text_input('Enter Analyst Name' ,'Analyst: ')
+
     # Add image
     plot.add_layout_image(
         dict(
@@ -1038,6 +1040,13 @@ def interactive_plot():
           bgcolor = 'white',
           bordercolor="Black",
           borderwidth=2))
+
+     plot.update_layout(title_text = ('Analyst: ' + name_input ), 
+                       title_x = .9,
+                       title_y = 1,
+                       title_xanchor = 'center')
+  
+
 
   
     plot.update_layout(
