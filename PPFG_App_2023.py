@@ -1031,7 +1031,7 @@ def interactive_plot():
                        title_x = .5, 
                        title_xanchor = 'center',
 
-                       text_input = ("Date", current_date),
+                       text_input = ("Date" + current_date),
                        
                        xaxis_title="PPG",
                        yaxis_title="TVD",
