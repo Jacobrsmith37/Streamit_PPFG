@@ -233,7 +233,8 @@ def interactive_plot():
         ['anhydrite', 0.471, 600],
         ['dolomitic limestone', 0.429, 200],
         ['siltstone', 0.500, 200],
-        ['coal', 0.800, 0.0]
+        ['coal', 0.800, 0.0],
+        ['frobisher-alida', 0.389, 0.0]
     ]
     # Create the pandas DataFrame
     df_lith = pd.DataFrame(data, columns = ['Lithology', 'Kf', 'Ts'])
