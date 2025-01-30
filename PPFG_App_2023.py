@@ -1048,10 +1048,13 @@ def interactive_plot():
   
     
 
-    plot.update_layout(text_input = ('Analyst: ' + name_input ), 
-                                      text = ('Date' + current_date),
-                       title_x = .9,
-                       title_y = 1)
+    plot.update_layout(annotations = [dict
+                                      x = .5,
+                                       y = -.15,
+                                       xref = 'paper',
+                                       yref = 'paper',
+                                       text = ('Analyst: ' + name_input ), 
+                                      text = ('Date' + current_date)])
   
 
 
