@@ -12,7 +12,7 @@ from PIL import Image
 from st_aggrid import AgGrid
 from st_aggrid import AgGrid, DataReturnMode, GridUpdateMode, GridOptionsBuilder, JsCode
 import time
-import datetime
+from datetime import datetime
 
 
 
@@ -1012,7 +1012,7 @@ def interactive_plot():
     title_input = st.sidebar.text_input('Enter Well Name' ,'Well Name')
 
     name_input = st.sidebar.text_input('Enter Analyst Name' ,'')
-    current_date = datetime.today().strftime('%Y-%m-%d')
+    current_date = datetime.today().strftime('%d-%m-%Y')
     text_box = st.text_input('Date: ' , value = current_date)
 
     # Add image
