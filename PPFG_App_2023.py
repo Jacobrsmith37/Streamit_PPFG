@@ -1029,10 +1029,7 @@ def interactive_plot():
   
     plot.update_layout(title_text = (title_input  + '<br>Pore Pressure Log Plot'), 
                        title_x = .5, 
-                       title_xanchor = 'center',
-
-                       text = ("Date" + current_date),
-                       
+                       title_xanchor = 'center',                 
                        xaxis_title="PPG",
                        yaxis_title="TVD",
                        height = 1000,
@@ -1051,9 +1048,10 @@ def interactive_plot():
   
     
 
-    #plot.update_layout(text_input = ('Analyst: ' + name_input ), 
-                       #title_x = .9,
-                      # title_y = 1)
+    plot.update_layout(text_input = ('Analyst: ' + name_input ), 
+                                      text = ('Date' + current_date),
+                       title_x = .9,
+                       title_y = 1)
   
 
 
