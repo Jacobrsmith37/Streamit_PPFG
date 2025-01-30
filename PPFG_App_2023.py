@@ -1050,7 +1050,7 @@ def interactive_plot():
 
     plot.update_layout(annotations =[dict(
                                       x = .8,
-                                      y = -.04,
+                                      y = -.06,
                                       xref = 'paper',
                                       yref = 'paper',
                                       text = ('Analyst: ' + name_input ))])
