@@ -1013,7 +1013,7 @@ def interactive_plot():
 
     name_input = st.sidebar.text_input('Enter Analyst Name' ,'')
     current_date = datetime.today().strftime('%m-%d-%Y')
-    version = st.sidebar.text_input('Version' , '1')
+    version = st.sidebar.text_input('Version' , 'v1')
     
     #plot.update_layout(text_input = ("Date", current_date), x = 1, y = 1)
   
@@ -1056,8 +1056,8 @@ def interactive_plot():
                                       yref = 'paper',
                                       showarrow = False,
                                       text = ('Analyst: ' + name_input + 
-                                              '<br>Date: '+ current_date) + 
-                                              '<br>Version: ' + version)])
+                                              '<br> '+ current_date) + 
+                                              '<br>' + version)])
 
   #text2 = ('Date' + current_date)
   
