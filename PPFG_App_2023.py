@@ -1012,9 +1012,9 @@ def interactive_plot():
     title_input = st.sidebar.text_input('Enter Well Name' ,'Well Name')
 
     name_input = st.sidebar.text_input('Enter Analyst Name' ,'')
-    current_date = datetime.today().strftime('%m-%d-%Y')
+
     
-    plot.text(.5, -.1, 'Date: ' current_date )
+    plot.text(.5, -.1, 'Date: ' datetime.today().strftime('%m-%d-%Y') )
   
     # Add image
     plot.add_layout_image(
